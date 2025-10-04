@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 packages_to_include = find_packages(exclude = ['test.*', 'test', 'test_manual'])
 setup(
     name = 'newteam1_sparkdeploy',
-    version = '0.3.0',
+    version = '0.4.0',
     packages = packages_to_include,
     description = '',
     install_requires = [],
