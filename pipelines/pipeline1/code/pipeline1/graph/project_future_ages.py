@@ -9,5 +9,8 @@ from pipeline1.functions import *
 def project_future_ages(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         (col("age").cast(IntegerType()) + lit(10)).alias("age_after_10_years"), 
-        (col("age").cast(IntegerType()) + lit(20)).alias("age_after_20_years")
+        (col("age").cast(IntegerType()) + lit(20)).alias("age_after_20_years"), 
+        col("name"), 
+        col("id"), 
+        col("age")
     )

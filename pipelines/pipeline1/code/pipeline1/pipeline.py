@@ -9,6 +9,7 @@ from pipeline1.graph import *
 def pipeline(spark: SparkSession) -> None:
     df_src1 = src1(spark)
     df_project_future_ages = project_future_ages(spark, df_src1)
+    df_filter_age_above_10 = filter_age_above_10(spark, df_project_future_ages)
 
 def main():
     spark = SparkSession.builder.enableHiveSupport().appName("pipeline1").getOrCreate()

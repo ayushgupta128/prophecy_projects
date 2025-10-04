@@ -92,6 +92,12 @@
     "sourcePort" : "7mMEQo3Qdam2twLR48BrS$$IlCPwCipsKReDYvP71LAL",
     "target" : "yFZyibqL_GKtjYc25EiPl$$_3ivCYIYUP_cAPGsAS5w-",
     "targetPort" : "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H"
+  }, {
+    "id" : "001oaENYMouZ5IAt9BHGZ$$PxvLQ0Ukr3IwCwMHBDSRX",
+    "source" : "yFZyibqL_GKtjYc25EiPl$$_3ivCYIYUP_cAPGsAS5w-",
+    "sourcePort" : "hlHGZCGYnp2jQy_VSWkhS$$g5-J4N2CixASmr5ol1lK7",
+    "target" : "1FAb4coVH4ySuaMMX0JKU$$Os7IponCes09_D17Sp-gN",
+    "targetPort" : "IazUO7xVtyd4B1PHOD2yx$$pf251yNDDVa6ETSSTXPw3"
   } ],
   "processes" : {
     "J5dNKRVLmigGTDuIweOzo$$burNs_CxN9k_Dq_AxHKwe" : {
@@ -196,13 +202,123 @@
             "expression" : "(CAST(age AS INT) + 20)"
           },
           "description" : ""
+        }, {
+          "target" : "name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "name"
+          },
+          "description" : ""
+        }, {
+          "target" : "id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "id"
+          },
+          "description" : ""
+        }, {
+          "target" : "age",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "age"
+          },
+          "description" : ""
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H##age" ]
+        "columnsSelector" : [ "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H##age", "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H##name", "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H##id" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.49&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "1FAb4coVH4ySuaMMX0JKU$$Os7IponCes09_D17Sp-gN" : {
+      "id" : "1FAb4coVH4ySuaMMX0JKU$$Os7IponCes09_D17Sp-gN",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_age_above_10",
+        "slug" : "filter_age_above_10",
+        "x" : -120,
+        "y" : -380,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "IazUO7xVtyd4B1PHOD2yx$$pf251yNDDVa6ETSSTXPw3",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "age_after_10_years",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age_after_20_years",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "yQCTPjajgLISED2p9dnz9$$UH9KuFrv8OlaV2_jbxGDw",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "IazUO7xVtyd4B1PHOD2yx$$pf251yNDDVa6ETSSTXPw3##age" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "age>10"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.49&projectSubscriptionProjectId=12654&path=gems/Filter",
         "projectName" : "ProphecySparkBasicsPython"
       }
     }
