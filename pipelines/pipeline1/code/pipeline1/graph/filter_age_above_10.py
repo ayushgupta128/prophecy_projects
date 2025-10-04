@@ -7,4 +7,4 @@ from pipeline1.config.ConfigStore import *
 from pipeline1.functions import *
 
 def filter_age_above_10(spark: SparkSession, in0: DataFrame) -> DataFrame:
-    return in0.filter((col("age") > lit(10)))
+    return in0.filter((col("age") > lit(11)))

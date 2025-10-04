@@ -314,7 +314,7 @@
         "columnsSelector" : [ "IazUO7xVtyd4B1PHOD2yx$$pf251yNDDVa6ETSSTXPw3##age" ],
         "condition" : {
           "format" : "sql",
-          "expression" : "age>10"
+          "expression" : "age>11"
         }
       },
       "componentInfo" : {
