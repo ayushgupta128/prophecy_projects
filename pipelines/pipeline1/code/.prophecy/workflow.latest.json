@@ -1,0 +1,217 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.12.3",
+        "pyPiVersion" : "2.1.4"
+      },
+      "sparkConfigJinjaEnabled" : true,
+      "workflowMode" : "batch"
+    },
+    "id" : "1",
+    "uri" : "pipelines/pipeline1",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "pipeline1",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true,
+      "isNullValuesInUnitTestsEnabled" : true,
+      "sparkConfigOptions" : {
+        "disableSparkCreationTimeConfigGeneration" : true
+      }
+    },
+    "language" : "python",
+    "fabricId" : "30674",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "newteam1.sparkdeploy.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ {
+      "name" : "spark.default.parallelism",
+      "value" : "4"
+    }, {
+      "name" : "spark.sql.legacy.allowUntypedScalaUDF",
+      "value" : "true"
+    } ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Selective",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "pipeline1",
+    "configTopLevelPackage" : "pipeline1",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "gDvM2101GY4M-A70GGM3l$$69BZz8Y9x8eScEwP4LY4k",
+    "source" : "J5dNKRVLmigGTDuIweOzo$$burNs_CxN9k_Dq_AxHKwe",
+    "sourcePort" : "7mMEQo3Qdam2twLR48BrS$$IlCPwCipsKReDYvP71LAL",
+    "target" : "yFZyibqL_GKtjYc25EiPl$$_3ivCYIYUP_cAPGsAS5w-",
+    "targetPort" : "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H"
+  } ],
+  "processes" : {
+    "J5dNKRVLmigGTDuIweOzo$$burNs_CxN9k_Dq_AxHKwe" : {
+      "id" : "J5dNKRVLmigGTDuIweOzo$$burNs_CxN9k_Dq_AxHKwe",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src1",
+        "slug" : "src1",
+        "x" : -480,
+        "y" : -340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "7mMEQo3Qdam2twLR48BrS$$IlCPwCipsKReDYvP71LAL",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src1"
+      }
+    },
+    "yFZyibqL_GKtjYc25EiPl$$_3ivCYIYUP_cAPGsAS5w-" : {
+      "id" : "yFZyibqL_GKtjYc25EiPl$$_3ivCYIYUP_cAPGsAS5w-",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "project_future_ages",
+        "slug" : "project_future_ages",
+        "x" : -280,
+        "y" : -360,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "hlHGZCGYnp2jQy_VSWkhS$$g5-J4N2CixASmr5ol1lK7",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "age_after_10_years",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "(CAST(age AS INT) + 10)"
+          },
+          "description" : ""
+        }, {
+          "target" : "age_after_20_years",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "(CAST(age AS INT) + 20)"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H##age" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.49&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}
