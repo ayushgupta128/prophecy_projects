@@ -98,6 +98,12 @@
     "sourcePort" : "hlHGZCGYnp2jQy_VSWkhS$$g5-J4N2CixASmr5ol1lK7",
     "target" : "1FAb4coVH4ySuaMMX0JKU$$Os7IponCes09_D17Sp-gN",
     "targetPort" : "IazUO7xVtyd4B1PHOD2yx$$pf251yNDDVa6ETSSTXPw3"
+  }, {
+    "id" : "ALDwUJlfjyTnyvY9gt1sO$$SBuDD_9Z73XS4Qe9aQSoG",
+    "source" : "1FAb4coVH4ySuaMMX0JKU$$Os7IponCes09_D17Sp-gN",
+    "sourcePort" : "yQCTPjajgLISED2p9dnz9$$UH9KuFrv8OlaV2_jbxGDw",
+    "target" : "HDfjoKBbVSDSU8P4aE1NP$$i795ys29fR2j5s-NlqRow",
+    "targetPort" : "wcPCZFqds485j0L3muSLR$$CW3ZtBrmzUkC4zrDlfetW"
   } ],
   "processes" : {
     "J5dNKRVLmigGTDuIweOzo$$burNs_CxN9k_Dq_AxHKwe" : {
@@ -320,6 +326,91 @@
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.49&projectSubscriptionProjectId=12654&path=gems/Filter",
         "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "HDfjoKBbVSDSU8P4aE1NP$$i795ys29fR2j5s-NlqRow" : {
+      "id" : "HDfjoKBbVSDSU8P4aE1NP$$i795ys29fR2j5s-NlqRow",
+      "component" : "customGem",
+      "metadata" : {
+        "label" : "customGem_1",
+        "slug" : "customGem_1",
+        "x" : 40,
+        "y" : -360,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wcPCZFqds485j0L3muSLR$$CW3ZtBrmzUkC4zrDlfetW",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "age_after_10_years",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age_after_20_years",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "VhNonR_P8yfhRIc3pgKXO$$0qJ19yhR_6RR9e0vlvVz4",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "my_property" : "default value of my property"
+      },
+      "componentInfo" : {
+        "gemId" : "gems/customGem",
+        "projectName" : "sparkdeploy"
       }
     }
   },
