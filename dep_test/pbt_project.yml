@@ -68,7 +68,7 @@ projectDependencies:
     projectUID: 60045
     projectName: sparkdeploynew
     repositoryPath: gitUri=https://github.com/ayushgupta128/prophecy_projects&subPath=/
-    version: sparkdeploynew/0.4.1
+    version: sparkdeploynew/2.0.0
     isDefault: false
     author: null
     createdAt: '2025-10-06 05:45:54'
