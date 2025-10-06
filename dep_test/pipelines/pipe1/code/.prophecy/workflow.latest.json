@@ -1,0 +1,256 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.12.3",
+        "pyPiVersion" : "2.1.4"
+      },
+      "sparkConfigJinjaEnabled" : true,
+      "workflowMode" : "batch"
+    },
+    "id" : "1",
+    "uri" : "pipelines/pipe1",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "pipe1",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true,
+      "isNullValuesInUnitTestsEnabled" : true,
+      "sparkConfigOptions" : {
+        "disableSparkCreationTimeConfigGeneration" : true
+      }
+    },
+    "language" : "python",
+    "fabricId" : "21998",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "gayushprophecyioteam.sparkdeploynew.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions", "newteam1.sparkdeploy.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ {
+      "name" : "spark.default.parallelism",
+      "value" : "4"
+    }, {
+      "name" : "spark.sql.legacy.allowUntypedScalaUDF",
+      "value" : "true"
+    } ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "60045",
+      "projectName" : "sparkdeploynew",
+      "externalDependencies" : [ {
+        "type" : "plibMaven",
+        "modifiedAt" : "2025-10-04T08:29:11.957908Z",
+        "name" : "plibMaven",
+        "version" : "8.12.3",
+        "id" : "1894703222",
+        "createdAt" : "2025-10-04T08:29:11.957908Z"
+      }, {
+        "type" : "plibPypi",
+        "modifiedAt" : "2025-10-04T08:29:11.957908Z",
+        "name" : "plibPypi",
+        "version" : "2.1.4",
+        "id" : "1914610127",
+        "createdAt" : "2025-10-04T08:29:11.957908Z"
+      } ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "pipe1",
+    "configTopLevelPackage" : "pipe1",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "2M_5tJDNgdz-X9gzOjCMn$$xVi_MvCvPusx7pRDOLIXd",
+    "source" : "2BjTsqFazM5qFzTmIkZZR$$S9cboQtMVXcfnAovskUK_",
+    "sourcePort" : "0T5fBYXzfbCXaqFf9TSGA$$s0hZpALAITUGFtoLHUyEK",
+    "target" : "z8ymid1pq5Eh1hcHowabn$$kJnivcHRT2ub6-j9VLS9-",
+    "targetPort" : "-DrNUMSvMc38UKtuL41Y2$$KyzvuWoWK3FnBJQ72Gvuq"
+  } ],
+  "processes" : {
+    "2BjTsqFazM5qFzTmIkZZR$$S9cboQtMVXcfnAovskUK_" : {
+      "id" : "2BjTsqFazM5qFzTmIkZZR$$S9cboQtMVXcfnAovskUK_",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src1",
+        "slug" : "src1",
+        "x" : -560,
+        "y" : -260,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "0T5fBYXzfbCXaqFf9TSGA$$s0hZpALAITUGFtoLHUyEK",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "gitUri=https://github.com/ayushgupta128/prophecy_projects&subPath=/&tag=sparkdeploynew/0.4.1&projectSubscriptionProjectId=60045&path=datasets/src1"
+      }
+    },
+    "z8ymid1pq5Eh1hcHowabn$$kJnivcHRT2ub6-j9VLS9-" : {
+      "id" : "z8ymid1pq5Eh1hcHowabn$$kJnivcHRT2ub6-j9VLS9-",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "age_transformation",
+        "slug" : "age_transformation",
+        "x" : -380,
+        "y" : -280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-DrNUMSvMc38UKtuL41Y2$$KyzvuWoWK3FnBJQ72Gvuq",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "3CcbnJkDFiEp6py3Pb1xr$$7aXZxjB8SgaaU3XIARidr",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "name"
+          },
+          "description" : ""
+        }, {
+          "target" : "id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "id"
+          },
+          "description" : ""
+        }, {
+          "target" : "age",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "age"
+          },
+          "description" : ""
+        }, {
+          "target" : "age_100",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "(CAST(age AS INT) + 100)"
+          },
+          "description" : ""
+        }, {
+          "target" : "age_101",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "(CAST(age AS INT) + 101)"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "-DrNUMSvMc38UKtuL41Y2$$KyzvuWoWK3FnBJQ72Gvuq##id", "-DrNUMSvMc38UKtuL41Y2$$KyzvuWoWK3FnBJQ72Gvuq##name", "-DrNUMSvMc38UKtuL41Y2$$KyzvuWoWK3FnBJQ72Gvuq##age" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.49&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}
