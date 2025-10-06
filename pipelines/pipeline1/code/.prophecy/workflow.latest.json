@@ -104,43 +104,22 @@
     "sourcePort" : "yQCTPjajgLISED2p9dnz9$$UH9KuFrv8OlaV2_jbxGDw",
     "target" : "HDfjoKBbVSDSU8P4aE1NP$$i795ys29fR2j5s-NlqRow",
     "targetPort" : "wcPCZFqds485j0L3muSLR$$CW3ZtBrmzUkC4zrDlfetW"
+  }, {
+    "id" : "KB5_c4DMOJP7UjLgScNx5$$5Vwa-wR7Bn-aoySiUZ20i",
+    "source" : "HDfjoKBbVSDSU8P4aE1NP$$i795ys29fR2j5s-NlqRow",
+    "sourcePort" : "VhNonR_P8yfhRIc3pgKXO$$0qJ19yhR_6RR9e0vlvVz4",
+    "target" : "V6VHphTGzeGgiVBLxokM4$$MH-KLvTPpe5IjaU7QYO_g",
+    "targetPort" : "4BVLo2hQtiFygzUiQeY1W$$Z2T-hjcPXQAXsbcsY6ACa"
   } ],
   "processes" : {
-    "J5dNKRVLmigGTDuIweOzo$$burNs_CxN9k_Dq_AxHKwe" : {
-      "id" : "J5dNKRVLmigGTDuIweOzo$$burNs_CxN9k_Dq_AxHKwe",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "src1",
-        "slug" : "src1",
-        "x" : -480,
-        "y" : -340,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "7mMEQo3Qdam2twLR48BrS$$IlCPwCipsKReDYvP71LAL",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/src1"
-      }
-    },
     "yFZyibqL_GKtjYc25EiPl$$_3ivCYIYUP_cAPGsAS5w-" : {
       "id" : "yFZyibqL_GKtjYc25EiPl$$_3ivCYIYUP_cAPGsAS5w-",
       "component" : "Reformat",
       "metadata" : {
         "label" : "project_future_ages",
         "slug" : "project_future_ages",
-        "x" : -280,
-        "y" : -360,
+        "x" : -340,
+        "y" : -580,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -232,10 +211,211 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H##age", "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H##name", "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H##id" ]
+        "columnsSelector" : [ "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H##id", "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H##age", "xxAeJLNqIT0oM5rvrSY8U$$kblrB4pagxy__lyoFlf8H##name" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.49&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "J5dNKRVLmigGTDuIweOzo$$burNs_CxN9k_Dq_AxHKwe" : {
+      "id" : "J5dNKRVLmigGTDuIweOzo$$burNs_CxN9k_Dq_AxHKwe",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "src1",
+        "slug" : "src1",
+        "x" : -540,
+        "y" : -560,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "7mMEQo3Qdam2twLR48BrS$$IlCPwCipsKReDYvP71LAL",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/src1"
+      }
+    },
+    "HDfjoKBbVSDSU8P4aE1NP$$i795ys29fR2j5s-NlqRow" : {
+      "id" : "HDfjoKBbVSDSU8P4aE1NP$$i795ys29fR2j5s-NlqRow",
+      "component" : "customGem",
+      "metadata" : {
+        "label" : "customGem_1",
+        "slug" : "customGem_1",
+        "x" : -20,
+        "y" : -580,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wcPCZFqds485j0L3muSLR$$CW3ZtBrmzUkC4zrDlfetW",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "age_after_10_years",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age_after_20_years",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "VhNonR_P8yfhRIc3pgKXO$$0qJ19yhR_6RR9e0vlvVz4",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "my_property" : "default value of my property"
+      },
+      "componentInfo" : {
+        "gemId" : "gems/customGem",
+        "projectName" : "sparkdeploynew"
+      }
+    },
+    "V6VHphTGzeGgiVBLxokM4$$MH-KLvTPpe5IjaU7QYO_g" : {
+      "id" : "V6VHphTGzeGgiVBLxokM4$$MH-KLvTPpe5IjaU7QYO_g",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "Filter_1",
+        "slug" : "Filter_1",
+        "x" : 140,
+        "y" : -600,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4BVLo2hQtiFygzUiQeY1W$$Z2T-hjcPXQAXsbcsY6ACa",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "age_after_10_years",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age_after_20_years",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "csPPGJua-ifB03ravpYbq$$_6Lrvn-2rDKSqM4l51qSE",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "true"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.49&projectSubscriptionProjectId=12654&path=gems/Filter",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -245,8 +425,8 @@
       "metadata" : {
         "label" : "filter_age_above_10",
         "slug" : "filter_age_above_10",
-        "x" : -120,
-        "y" : -380,
+        "x" : -180,
+        "y" : -600,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -326,91 +506,6 @@
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.49&projectSubscriptionProjectId=12654&path=gems/Filter",
         "projectName" : "ProphecySparkBasicsPython"
-      }
-    },
-    "HDfjoKBbVSDSU8P4aE1NP$$i795ys29fR2j5s-NlqRow" : {
-      "id" : "HDfjoKBbVSDSU8P4aE1NP$$i795ys29fR2j5s-NlqRow",
-      "component" : "customGem",
-      "metadata" : {
-        "label" : "customGem_1",
-        "slug" : "customGem_1",
-        "x" : 40,
-        "y" : -360,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false,
-        "dataPreview" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "wcPCZFqds485j0L3muSLR$$CW3ZtBrmzUkC4zrDlfetW",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "age_after_10_years",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "age_after_20_years",
-              "type" : "integer",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "name",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "id",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "age",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "outputs" : [ {
-          "id" : "VhNonR_P8yfhRIc3pgKXO$$0qJ19yhR_6RR9e0vlvVz4",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "my_property" : "default value of my property"
-      },
-      "componentInfo" : {
-        "gemId" : "gems/customGem",
-        "projectName" : "sparkdeploy"
       }
     }
   },

@@ -11,6 +11,7 @@ def pipeline(spark: SparkSession) -> None:
     df_project_future_ages = project_future_ages(spark, df_src1)
     df_filter_age_above_10 = filter_age_above_10(spark, df_project_future_ages)
     df_customGem_1 = customGem_1(spark, df_filter_age_above_10)
+    df_Filter_1 = Filter_1(spark, df_customGem_1)
 
 def main():
     spark = SparkSession.builder.enableHiveSupport().appName("pipeline1").getOrCreate()
