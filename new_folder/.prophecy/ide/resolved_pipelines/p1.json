@@ -1,0 +1,62 @@
+{
+  "id" : "p1",
+  "metainfo" : {
+    "label" : "p1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "vqfhDQS3y9_oYAMhLkZOJ$$q-Ui8hXqG9bkakXWjbUam" : {
+      "id" : "vqfhDQS3y9_oYAMhLkZOJ$$q-Ui8hXqG9bkakXWjbUam",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "customer",
+        "x" : -960,
+        "y" : -540,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "customer",
+          "sourceType" : "Source",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "qwyN5OHJJta8kUFtcY0AM$$zQXv-m0cSYFHoBpbyKpQZ",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "4JVUO2T3w5eR4ZquLCiXx$$aw5qfWKjUbl2PJxcu0mCW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}
