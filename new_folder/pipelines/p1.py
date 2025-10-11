@@ -2,8 +2,4 @@ Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@g
 SensorSchedule = SensorSchedule(enabled = False)
 
 with DAG(Schedule = Schedule, SensorSchedule = SensorSchedule):
-    customer = Task(
-        task_id = "customer", 
-        component = "Dataset", 
-        table = {"name" : "customer", "sourceType" : "Source", "sourceName" : "ayush_demos.demos", "alias" : ""}
-    )
+    p1__Limit_1 = Task(task_id = "p1__Limit_1", component = "Model", modelName = "p1__Limit_1")

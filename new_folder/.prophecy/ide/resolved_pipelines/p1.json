@@ -27,61 +27,29 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "vqfhDQS3y9_oYAMhLkZOJ$$q-Ui8hXqG9bkakXWjbUam" : {
-      "id" : "vqfhDQS3y9_oYAMhLkZOJ$$q-Ui8hXqG9bkakXWjbUam",
-      "component" : "Dataset",
+    "9TyZGlv24jHGh67sAaj3U$$FpTaE6JWMytn1uW0W_hj1" : {
+      "id" : "9TyZGlv24jHGh67sAaj3U$$FpTaE6JWMytn1uW0W_hj1",
+      "component" : "Model",
       "metadata" : {
-        "label" : "customer",
-        "x" : -960,
-        "y" : -540,
+        "label" : "p1__Limit_1",
         "phase" : 0
       },
       "properties" : {
-        "table" : {
-          "name" : "customer",
-          "sourceType" : "Source",
-          "sourceName" : "ayush_demos.demos",
-          "alias" : ""
-        }
+        "modelName" : "p1__Limit_1"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "Limit_1_eSF7bngz1qA4FCho-U6u-$$A9et64rvNOVkAM8gwjY6V", "9TyZGlv24jHGh67sAaj3U$$FpTaE6JWMytn1uW0W_hj1", "JxRQLCW5UpUOCF669g83L$$pWdcqcUAuKWTHn_aX6ZrV", "vqfhDQS3y9_oYAMhLkZOJ$$q-Ui8hXqG9bkakXWjbUam" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "qwyN5OHJJta8kUFtcY0AM$$zQXv-m0cSYFHoBpbyKpQZ",
-          "slug" : "in"
+          "id" : "p1__Limit_1_in_0",
+          "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "4JVUO2T3w5eR4ZquLCiXx$$aw5qfWKjUbl2PJxcu0mCW",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "databricks",
-            "fields" : [ {
-              "name" : "customer_id",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "event_type",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "event_time",
-              "dataType" : {
-                "type" : "Timestamp"
-              }
-            }, {
-              "name" : "country",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "city",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "out"
+          "id" : "p1__Limit_1_out_0",
+          "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
       }
