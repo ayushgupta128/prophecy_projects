@@ -88,3 +88,6 @@ macros:
     type: "value"
     description: "{\"ProphecyType\": \"value\"}"
   macroType: "query"
+- name: "generate_schema_name"
+  arguments: []
+  macroType: "expression"

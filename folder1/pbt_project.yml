@@ -48,6 +48,16 @@ sqlMacros:
     - .prophecy/ide/macros/generate_html_table_from_relation.json
     - macros/macros.yml
     createdAt: '2025-10-23 09:20:24'
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: g.ayush@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    - macros/macros.yml
+    createdAt: '2025-10-24 07:14:58'
   .prophecy/metadata/sqlmacros/prophecy_tmp_source:
     name: prophecy_tmp_source
     macroType: expression
@@ -241,6 +251,53 @@ sqlSources:
       author: g.ayush@prophecy.io
       createdAt: '2025-10-24 06:16:47'
       tableType: table
+    - name: newtesttable
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: id
+          dataType:
+            type: Integer
+        - name: age
+          dataType:
+            type: Integer
+      description: null
+      author: g.ayush@prophecy.io
+      createdAt: '2025-10-24 07:17:34'
+      tableType: table
+    - name: students
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields: []
+      description: null
+      author: g.ayush@prophecy.io
+      createdAt: '2025-10-24 14:27:34'
+      tableType: table
+  .prophecy/metadata/sqlsources/ayush_demos_demos_demos:
+    name: ayush_demos.demos_demos
+    description: null
+    author: g.ayush@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-10-24 07:18:50'
+    tables:
+    - name: test
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: id
+          dataType:
+            type: Integer
+        - name: age
+          dataType:
+            type: Integer
+      description: null
+      author: g.ayush@prophecy.io
+      createdAt: '2025-10-24 07:18:50'
+      tableType: table
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
@@ -262,17 +319,6 @@ flags:
 pipelineConfigurations: {}
 projectConfigurations: {}
 sqlOrchestratorPipelines:
-  .prophecy/metadata/sqlorchestratorpipeline/p1:
-    name: p1
-    schema: null
-    description: null
-    author: g.ayush@prophecy.io
-    files:
-    - models/p1/schema.yml
-    - models/p1/p1__customer.sql
-    - .prophecy/ide/pipelines/p1.json
-    - pipelines/p1.py
-    createdAt: '2025-10-22 16:06:22'
   .prophecy/metadata/sqlorchestratorpipeline/copilotTest:
     name: copilotTest
     schema: null
@@ -288,16 +334,28 @@ sqlOrchestratorPipelines:
     description: null
     author: g.ayush@prophecy.io
     files:
+    - models/p3/p3__Reformat_1.sql
+    - models/p3/schema.yml
     - .prophecy/ide/pipelines/p3.json
     - pipelines/p3.py
     createdAt: '2025-10-22 15:48:44'
+  .prophecy/metadata/sqlorchestratorpipeline/p1:
+    name: p1
+    schema: null
+    description: null
+    author: g.ayush@prophecy.io
+    files:
+    - models/p1/schema.yml
+    - models/p1/p1__customer.sql
+    - .prophecy/ide/pipelines/p1.json
+    - pipelines/p1.py
+    createdAt: '2025-10-22 16:06:22'
   .prophecy/metadata/sqlorchestratorpipeline/p2:
     name: p2
     schema: null
     description: null
     author: g.ayush@prophecy.io
     files:
-    - models/p2/p2__Filter_0.sql
     - models/p2/schema.yml
     - .prophecy/ide/pipelines/p2.json
     - pipelines/p2.py

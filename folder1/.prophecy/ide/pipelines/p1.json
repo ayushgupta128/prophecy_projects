@@ -83,9 +83,9 @@
       },
       "properties" : {
         "table" : {
-          "name" : "dummytable",
+          "name" : "test",
           "sourceType" : "Source",
-          "sourceName" : "ayush_demos.demos",
+          "sourceName" : "ayush_demos.demos_demos",
           "alias" : ""
         },
         "writeOptions" : {

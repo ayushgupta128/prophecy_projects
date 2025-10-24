@@ -33,72 +33,307 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "3KXniBbNuseVbNFsvnN2h$$z0c87gRG6V_8uF1GqRprg" : {
-      "id" : "3KXniBbNuseVbNFsvnN2h$$z0c87gRG6V_8uF1GqRprg",
-      "component" : "Pipeline",
+    "IxMkPvrS1DGcdojRFYqqe$$q2BsbuLNkwVCnpjMQU0Qc" : {
+      "id" : "IxMkPvrS1DGcdojRFYqqe$$q2BsbuLNkwVCnpjMQU0Qc",
+      "component" : "Dataset",
       "metadata" : {
-        "label" : "run_pipeline_p1",
-        "x" : -400,
-        "y" : 60,
+        "label" : "empty_output",
+        "x" : -560,
+        "y" : -300,
         "phase" : 0
       },
       "properties" : {
-        "maxTriggers" : 10000,
-        "triggerCondition" : "Always",
-        "enableMaxTriggers" : false,
-        "pipelineName" : "p1",
-        "parameters" : { }
+        "table" : {
+          "name" : "customer",
+          "sourceType" : "Table",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : "",
+          "additionalProperties" : null
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "qf2qROzvCZCLUaf3z8rlp$$Zpm54g7fhFD1Y4mvrPUXW",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "XwcCz4CJkgjSRPWoTRhap$$yBB2wlAPRMTK04jBNFtxq",
+          "id" : "aT3s9l8RVxzPfcyom85kC$$7OZHS2IPG7aamxFfXot8r",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "status",
+              "name" : "name",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "run_id",
+              "name" : "path",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "start_time",
+              "name" : "size_in_bytes",
               "dataType" : {
-                "type" : "Timestamp"
+                "type" : "Bigint"
               }
             }, {
-              "name" : "end_time",
+              "name" : "creation_time",
               "dataType" : {
-                "type" : "Timestamp"
+                "type" : "Bigint"
               }
             }, {
-              "name" : "error",
+              "name" : "modification_time",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "parent_directory",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "logs",
+              "name" : "file_type",
               "dataType" : {
-                "type" : "Array",
-                "dataType" : {
-                  "type" : "String"
-                }
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "8GAsWgraCmyRWQJFV7aya$$YLMAJOuJIJSuqdONZh4-6",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "path",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "size_in_bytes",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "creation_time",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "modification_time",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "parent_directory",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "file_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "NyAiNM-fRwKuiFnPkggoq$$csOsKPS0wpOn5g8i40yEN" : {
+      "id" : "NyAiNM-fRwKuiFnPkggoq$$csOsKPS0wpOn5g8i40yEN",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "x" : -360,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "KY3SGye0CtpT7ZUxD9o3M$$EEH32aVK1eJTgAVEHGcfy",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "path",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "size_in_bytes",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "creation_time",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "modification_time",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "parent_directory",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "file_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "dTtaJg83NsrabfDuf5JuJ$$cJE1GNZq2qJFp43FmzvFh",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "path",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "size_in_bytes",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "creation_time",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "modification_time",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "parent_directory",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "file_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "68GUL-1HrQZQbGIM_lJsx$$PzbuxHuwDQhzVtiHkFlbw" : {
+      "id" : "68GUL-1HrQZQbGIM_lJsx$$PzbuxHuwDQhzVtiHkFlbw",
+      "component" : "Directory",
+      "metadata" : {
+        "label" : "list_databricks_files",
+        "x" : -820,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "integration" : "databricks",
+        "path" : "cewcew",
+        "connector" : {
+          "kind" : "databricks",
+          "properties" : {
+            "id" : "databricks_orchestrate"
+          },
+          "type" : "connector"
+        },
+        "pattern" : "cewc"
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "YW79gL1ymSRke66bIz9u2$$sfxDz_VdLpqla9KlU9wfD",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "path",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "size_in_bytes",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "creation_time",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "modification_time",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "parent_directory",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "file_type",
+              "dataType" : {
+                "type" : "String"
               }
             } ]
           },
           "slug" : "out0"
-        } ]
+        } ],
+        "isCustomOutputSchema" : false
       }
     }
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "kPMZjwuQISlAARsV_zfB8$$O16Thy_B7e3xLWgZ5kb1v",
+    "source" : "IxMkPvrS1DGcdojRFYqqe$$q2BsbuLNkwVCnpjMQU0Qc",
+    "sourcePort" : "8GAsWgraCmyRWQJFV7aya$$YLMAJOuJIJSuqdONZh4-6",
+    "target" : "NyAiNM-fRwKuiFnPkggoq$$csOsKPS0wpOn5g8i40yEN",
+    "targetPort" : "KY3SGye0CtpT7ZUxD9o3M$$EEH32aVK1eJTgAVEHGcfy"
+  }, {
+    "id" : "9bcbtT4in_d1SDALjOpAg",
+    "source" : "68GUL-1HrQZQbGIM_lJsx$$PzbuxHuwDQhzVtiHkFlbw",
+    "sourcePort" : "YW79gL1ymSRke66bIz9u2$$sfxDz_VdLpqla9KlU9wfD",
+    "target" : "IxMkPvrS1DGcdojRFYqqe$$q2BsbuLNkwVCnpjMQU0Qc",
+    "targetPort" : "aT3s9l8RVxzPfcyom85kC$$7OZHS2IPG7aamxFfXot8r"
+  } ],
   "component" : "Pipeline"
 }

@@ -1,6 +1,2 @@
 ---
 version: 2
-models:
-- name: "p2__Filter_0"
-  tags:
-  - "prophecy_temp"

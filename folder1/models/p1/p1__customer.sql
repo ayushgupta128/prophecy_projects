@@ -1,9 +1,9 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "dummytable",
+    "alias": "test",
     "database": "ayush_demos",
-    "schema": "demos"
+    "schema": "demos_demos"
   })
 }}
 

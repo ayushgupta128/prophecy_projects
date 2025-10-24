@@ -118,3 +118,28 @@ sources:
       dataType:
         type: "Integer"
     type: "table"
+  - name: "newtesttable"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Integer"
+    - name: "age"
+      dataType:
+        type: "Integer"
+    type: "table"
+  - name: "students"
+    columns: []
+    type: "table"
+- name: "ayush_demos.demos_demos"
+  database: "ayush_demos"
+  schema: "demos_demos"
+  tables:
+  - name: "test"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Integer"
+    - name: "age"
+      dataType:
+        type: "Integer"
+    type: "table"

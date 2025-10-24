@@ -27,34 +27,111 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "TrLmTDvianQQHNxGzmtHp$$qhHhItrV-pZJALEY7e5vR" : {
-      "id" : "TrLmTDvianQQHNxGzmtHp$$qhHhItrV-pZJALEY7e5vR",
-      "component" : "Filter",
+    "_4JMKsPA6uHFX_P86lZL1" : {
+      "id" : "_4JMKsPA6uHFX_P86lZL1",
+      "component" : "Dataset",
       "metadata" : {
-        "label" : "Filter_0",
-        "x" : -540,
-        "y" : -360,
+        "label" : "s1",
+        "x" : -860,
+        "y" : -380,
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
-        "condition" : {
-          "expression" : "true"
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "s1",
+          "sourceType" : "Seed",
+          "alias" : ""
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "Ozx41lhQC-_HnPKaQKoRt$$0g-0K5tKA4iuZS2xT0n1m",
+          "id" : "RkYS8bs33FPqfl6zrpT6d",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "t-RMErns7R9euK9iQ14f-",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "age",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "0gCWUbtI87ATnmKlTxxWK$$RwfRzgUcxa7-n_gdpACBI" : {
+      "id" : "0gCWUbtI87ATnmKlTxxWK$$RwfRzgUcxa7-n_gdpACBI",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "x" : -660,
+        "y" : -380,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : ""
+          },
+          "alias" : "id",
+          "_row_id" : "bKNW7JWYcK"
+        }, {
+          "expression" : {
+            "expression" : ""
+          },
+          "alias" : "age",
+          "_row_id" : "08GNQd-qOk"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "70vDkJGMkRgHgXIwn2N6N$$uvC9s0O4TFolny6hrH60c",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "age",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "mAHeEBAPO4IEeyX5FsGdc$$jY_KvNQ1BD5pwRDtmULHv",
+          "id" : "2UECJcbSQQo9ZHPuTWrix$$FZqe-a1XU6O2y6V7dOrH7",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       }
     }
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "0uI3Ws-Vyn8R45S9EjMop$$taexmQKK-USK0moOCa_S_",
+    "source" : "_4JMKsPA6uHFX_P86lZL1",
+    "sourcePort" : "t-RMErns7R9euK9iQ14f-",
+    "target" : "0gCWUbtI87ATnmKlTxxWK$$RwfRzgUcxa7-n_gdpACBI",
+    "targetPort" : "70vDkJGMkRgHgXIwn2N6N$$uvC9s0O4TFolny6hrH60c"
+  } ],
   "component" : "Pipeline"
 }

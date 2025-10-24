@@ -9,10 +9,10 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"dummytable\"",
+        "alias" : "\"test\"",
         "materialized" : "table",
         "database" : "\"ayush_demos\"",
-        "schema" : "\"demos\"",
+        "schema" : "\"demos_demos\"",
         "type" : "ModelConfig"
       }
     },

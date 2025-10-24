@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "p3__Reformat_1"
+  tags:
+  - "prophecy_temp"

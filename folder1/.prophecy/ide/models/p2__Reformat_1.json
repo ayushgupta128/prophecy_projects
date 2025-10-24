@@ -1,0 +1,133 @@
+{
+  "id" : "p2__Reformat_1",
+  "metainfo" : {
+    "label" : "p2__Reformat_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"ayush_demos\"",
+        "schema" : "\"demos\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "Reformat_1_2UECJcbSQQo9ZHPuTWrix$$FZqe-a1XU6O2y6V7dOrH7" : {
+      "id" : "Reformat_1_2UECJcbSQQo9ZHPuTWrix$$FZqe-a1XU6O2y6V7dOrH7",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "Reformat_1"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM Reformat_1\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "0gCWUbtI87ATnmKlTxxWK$$RwfRzgUcxa7-n_gdpACBI" : {
+      "id" : "0gCWUbtI87ATnmKlTxxWK$$RwfRzgUcxa7-n_gdpACBI",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "x" : -660,
+        "y" : -380,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : ""
+          },
+          "alias" : "id",
+          "_row_id" : "bKNW7JWYcK"
+        }, {
+          "expression" : {
+            "expression" : ""
+          },
+          "alias" : "age",
+          "_row_id" : "08GNQd-qOk"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "70vDkJGMkRgHgXIwn2N6N$$uvC9s0O4TFolny6hrH60c",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "2UECJcbSQQo9ZHPuTWrix$$FZqe-a1XU6O2y6V7dOrH7",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "_4JMKsPA6uHFX_P86lZL1" : {
+      "id" : "_4JMKsPA6uHFX_P86lZL1",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "s1",
+        "x" : -860,
+        "y" : -380,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "s1",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "t-RMErns7R9euK9iQ14f-",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_0gCWUbtI87ATnmKlTxxWK$$RwfRzgUcxa7-n_gdpACBI_Reformat_1_2UECJcbSQQo9ZHPuTWrix$$FZqe-a1XU6O2y6V7dOrH7",
+    "source" : "0gCWUbtI87ATnmKlTxxWK$$RwfRzgUcxa7-n_gdpACBI",
+    "sourcePort" : "2UECJcbSQQo9ZHPuTWrix$$FZqe-a1XU6O2y6V7dOrH7",
+    "target" : "Reformat_1_2UECJcbSQQo9ZHPuTWrix$$FZqe-a1XU6O2y6V7dOrH7",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "0uI3Ws-Vyn8R45S9EjMop$$taexmQKK-USK0moOCa_S_",
+    "source" : "_4JMKsPA6uHFX_P86lZL1",
+    "sourcePort" : "t-RMErns7R9euK9iQ14f-",
+    "target" : "0gCWUbtI87ATnmKlTxxWK$$RwfRzgUcxa7-n_gdpACBI",
+    "targetPort" : "70vDkJGMkRgHgXIwn2N6N$$uvC9s0O4TFolny6hrH60c"
+  } ],
+  "component" : "Model"
+}
