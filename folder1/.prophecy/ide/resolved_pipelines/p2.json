@@ -1,0 +1,57 @@
+{
+  "id" : "p2",
+  "metainfo" : {
+    "label" : "p2",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "TrLmTDvianQQHNxGzmtHp$$qhHhItrV-pZJALEY7e5vR" : {
+      "id" : "TrLmTDvianQQHNxGzmtHp$$qhHhItrV-pZJALEY7e5vR",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "p2__Filter_0",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "p2__Filter_0"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "Filter_0_mAHeEBAPO4IEeyX5FsGdc$$jY_KvNQ1BD5pwRDtmULHv", "TrLmTDvianQQHNxGzmtHp$$qhHhItrV-pZJALEY7e5vR" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "p2__Filter_0_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

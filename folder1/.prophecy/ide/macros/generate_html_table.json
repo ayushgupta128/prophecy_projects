@@ -1,0 +1,240 @@
+{
+  "generate_html_table" : {
+    "name" : "generate_html_table",
+    "macroType" : "query",
+    "definition" : "\n\n{% set result = run_query(sql) %}\n{% if not result %}\n\t{{ return('') }}\n{% endif %}\n\n{% set columns = [] %}\n{% for col in result.columns %}\n\t{% do columns.append( (col.name | default(col.column)) ) %}\n{% endfor %}\n\n{% set rows = result.rows %}\n{% set defaults = defaults or {} %}\n{% set fmts = {} %}\n{% if column_formats is mapping %}\n\t{% do fmts.update(column_formats) %}\n{% endif %}\n\n{% if infer_formats and rows and rows|length > 0 %}\n\t{% set first = rows[0] %}\n\t{% for c in range(0, columns|length) %}\n\t\t{% set col_name = columns[c] %}\n\t\t{% if fmts.get(col_name) is not defined %}\n\t\t\t{% set inferred = infer_format_for_value(first[c], defaults) %}\n\t\t\t{% do fmts.update({ (col_name): inferred }) %}\n\t\t{% endif %}\n\t{% endfor %}\n{% endif %}\n{% set col_kinds = {} %}\n{% for c in range(0, columns|length) %}\n\t{% set col_name = columns[c] %}\n\t{% set fmt = fmts.get(col_name) %}\n\t{% if fmt is mapping %}\n\t\t{% set kind = fmt.get('type', 'text') %}\n\t{% elif fmt is string %}\n\t\t{% set kind = fmt %}\n\t{% else %}\n\t\t{% set kind = 'text' %}\n\t{% endif %}\n\t{% do col_kinds.update({ (col_name): kind }) %}\n{% endfor %}\n\n{% set html = [] %}\n{% do html.append('<table' ~ (' class=\"' ~ table_class ~ '\"' if table_class else '') ~ '>') %}\n\n{% if caption %}\n\t{% do html.append('<caption>' ~ caption|e ~ '</caption>') %}\n{% endif %}\n\n{% do html.append('<thead><tr>') %}\n{% if include_index %}\n\t{% do html.append('<th class=\"col-index\">#</th>') %}\n{% endif %}\n{% for c in columns %}\n\t{% set th_cls = '' %}\n\t{% if add_col_classes %}\n\t\t{% set kind = col_kinds.get(c, 'text') %}\n\t\t{% set th_cls = ' class=\"col-' ~ kind ~ '\"' %}\n\t{% endif %}\n\t{% do html.append('<th' ~ th_cls ~ '>' ~ c|e ~ '</th>') %}\n{% endfor %}\n{% do html.append('</tr></thead>') %}\n\n{% do html.append('<tbody>') %}\n{% for row in rows[:max_rows] %}\n\t{% do html.append('<tr>') %}\n\t{% if include_index %}\n\t\t{% do html.append('<td class=\"col-index\">' ~ loop.index ~ '</td>') %}\n\t{% endif %}\n\t{% for ci in range(0, columns|length) %}\n\t\t{% set cell = row[ci] %}\n\t\t{% set col_name = columns[ci] %}\n\t\t{% set fmt = fmts.get(col_name) %}\n\t\t{% if fmt is defined and fmt is not none %}\n\t\t\t{% set rendered = format_cell(cell, fmt) %}\n\t\t{% else %}\n\t\t\t{% set rendered = (cell if cell is not none else '') %}\n\t\t{% endif %}\n\t\t{% set td_cls = '' %}\n\t\t{% if add_col_classes %}\n\t\t\t{% set kind = col_kinds.get(col_name, 'text') %}\n\t\t\t{% set td_cls = ' class=\"col-' ~ kind ~ '\"' %}\n\t\t{% endif %}\n\t\t{% do html.append('<td' ~ td_cls ~ '>' ~ (rendered|string)|e ~ '</td>') %}\n\t{% endfor %}\n\t{% do html.append('</tr>') %}\n{% endfor %}\n{% do html.append('</tbody>') %}\n\n{% if summary is mapping and rows and rows|length > 0 %}\n\t{% set sums = {} %}\n\t{% set counts = {} %}\n\t{% for row in rows[:max_rows] %}\n\t\t{% for ci in range(0, columns|length) %}\n\t\t\t{% set col_name = columns[ci] %}\n\t\t\t{% set agg = summary.get(col_name) %}\n\t\t\t{% if agg in ['sum','avg','count'] %}\n\t\t\t\t{% set val = row[ci] %}\n\t\t\t\t{% if agg == 'count' %}\n\t\t\t\t\t{% set _ = counts.update({ (col_name): (counts.get(col_name, 0) + 1) }) %}\n\t\t\t\t{% elif val is number %}\n\t\t\t\t\t{% set _ = sums.update({ (col_name): (sums.get(col_name, 0) + val) }) %}\n\t\t\t\t\t{% set _ = counts.update({ (col_name): (counts.get(col_name, 0) + 1) }) %}\n\t\t\t\t{% endif %}\n\t\t\t{% endif %}\n\t\t{% endfor %}\n\t{% endfor %}\n\n\t{% do html.append('<tfoot><tr>') %}\n\t{% if include_index %}\n\t\t{% do html.append('<td class=\"col-index\"></td>') %}\n\t{% endif %}\n\t{% for c in columns %}\n\t\t{% set agg = summary.get(c) %}\n\t\t{% if agg == 'sum' %}\n\t\t\t{% set val = sums.get(c) %}\n\t\t{% elif agg == 'avg' %}\n\t\t\t{% set cnt = counts.get(c, 0) %}\n\t\t\t{% set val = (sums.get(c) / cnt) if cnt > 0 else none %}\n\t\t{% elif agg == 'count' %}\n\t\t\t{% set val = counts.get(c) %}\n\t\t{% else %}\n\t\t\t{% set val = none %}\n\t\t{% endif %}\n\t\t{% set fmt = fmts.get(c) %}\n\t\t{% set rendered = (format_cell(val, fmt) if (fmt is defined and val is not none) else (val if val is not none else '')) %}\n\t\t{% set td_cls = '' %}\n\t\t{% if add_col_classes %}\n\t\t\t{% set kind = col_kinds.get(c, 'text') %}\n\t\t\t{% set td_cls = ' class=\"col-' ~ kind ~ ' summary\"' %}\n\t\t{% endif %}\n\t\t{% do html.append('<td' ~ td_cls ~ '>' ~ (rendered|string)|e ~ '</td>') %}\n\t{% endfor %}\n\t{% do html.append('</tr></tfoot>') %}\n{% endif %}\n\n{% do html.append('</table>') %}\n\n{{ return(html|join('')) }}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "sql",
+        "kind" : {
+          "type" : "value"
+        },
+        "optional" : false,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "caption",
+        "kind" : {
+          "type" : "value",
+          "value" : "None"
+        },
+        "optional" : true,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "max_rows",
+        "kind" : {
+          "type" : "value",
+          "value" : "100"
+        },
+        "optional" : true,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "table_class",
+        "kind" : {
+          "type" : "value",
+          "value" : "''"
+        },
+        "optional" : true,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "include_index",
+        "kind" : {
+          "type" : "value",
+          "value" : "False"
+        },
+        "optional" : true,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "column_formats",
+        "kind" : {
+          "type" : "value",
+          "value" : "None"
+        },
+        "optional" : true,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "infer_formats",
+        "kind" : {
+          "type" : "value",
+          "value" : "False"
+        },
+        "optional" : true,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "defaults",
+        "kind" : {
+          "type" : "value",
+          "value" : "None"
+        },
+        "optional" : true,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "add_col_classes",
+        "kind" : {
+          "type" : "value",
+          "value" : "True"
+        },
+        "optional" : true,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "summary",
+        "kind" : {
+          "type" : "value",
+          "value" : "None"
+        },
+        "optional" : true,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      } ]
+    },
+    "staleState" : "none",
+    "propertiesFile" : {
+      "name" : "macros",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"concat_html_tables_from_relations\"\n  arguments:\n  - name: \"sections\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"HtmlTable\"\n  arguments:\n  - name: \"sections\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"concat_html_tables\"\n  arguments:\n  - name: \"sections\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"expression\"\n- name: \"generate_html_table_from_relation\"\n  arguments:\n  - name: \"relation\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"columns\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"where_clause\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"order_by\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"limit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"caption\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"table_class\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"include_index\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"column_formats\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"add_col_classes\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"summary\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"expression\"\n- name: \"generate_html_table\"\n  arguments:\n  - name: \"sql\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"caption\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"max_rows\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"table_class\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"include_index\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"column_formats\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"infer_formats\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"defaults\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"add_col_classes\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"summary\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
+      "path" : "test_sql_orch/macros/macros.yml",
+      "projectConfiguration" : null,
+      "folderConfiguration" : {
+        "version" : 2,
+        "macros" : [ {
+          "name" : "concat_html_tables_from_relations",
+          "arguments" : [ {
+            "name" : "sections",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "HtmlTable",
+          "arguments" : [ {
+            "name" : "sections",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "concat_html_tables",
+          "arguments" : [ {
+            "name" : "sections",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "expression"
+        }, {
+          "name" : "generate_html_table_from_relation",
+          "arguments" : [ {
+            "name" : "relation",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "columns",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "where_clause",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "order_by",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "limit",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "caption",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "table_class",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "include_index",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "column_formats",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "add_col_classes",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "summary",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "expression"
+        }, {
+          "name" : "generate_html_table",
+          "arguments" : [ {
+            "name" : "sql",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "caption",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "max_rows",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "table_class",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "include_index",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "column_formats",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "infer_formats",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "defaults",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "add_col_classes",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "summary",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        } ]
+      },
+      "packagesYml" : null,
+      "editable" : true
+    },
+    "version" : 0
+  }
+}

@@ -1,0 +1,97 @@
+---
+version: 2
+sources:
+- name: "ayush_demos.demos"
+  database: "ayush_demos"
+  schema: "demos"
+  tables:
+  - name: "my_temp_view"
+    columns:
+    - name: "customer_id"
+      dataType:
+        type: "String"
+    - name: "event_type"
+      dataType:
+        type: "String"
+    - name: "event_time"
+      dataType:
+        type: "Timestamp"
+    - name: "country"
+      dataType:
+        type: "String"
+    - name: "city"
+      dataType:
+        type: "String"
+    type: "view"
+  - name: "initial_table"
+    columns:
+    - name: "customer_id"
+      dataType:
+        type: "Bigint"
+    - name: "customer_name"
+      dataType:
+        type: "String"
+    - name: "address"
+      dataType:
+        type: "String"
+    - name: "status"
+      dataType:
+        type: "String"
+    - name: "effective_date"
+      dataType:
+        type: "Date"
+    - name: "end_date"
+      dataType:
+        type: "Date"
+    - name: "extra_col"
+      dataType:
+        type: "String"
+    - name: "dbt_scd_id"
+      dataType:
+        type: "String"
+    - name: "dbt_valid_from"
+      dataType:
+        type: "String"
+    - name: "dbt_valid_to"
+      dataType:
+        type: "String"
+    - name: "dbt_updated_at"
+      dataType:
+        type: "Timestamp"
+    type: "table"
+  - name: "customer"
+    columns:
+    - name: "name"
+      dataType:
+        type: "String"
+    - name: "country"
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "new_table"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Integer"
+    - name: "age"
+      dataType:
+        type: "Integer"
+    type: "table"
+  - name: "newtable"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Integer"
+    - name: "age"
+      dataType:
+        type: "Integer"
+    type: "table"
+  - name: "dummytable"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Integer"
+    - name: "age"
+      dataType:
+        type: "Integer"
+    type: "table"

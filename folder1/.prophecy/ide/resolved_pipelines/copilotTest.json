@@ -1,0 +1,81 @@
+{
+  "id" : "copilotTest",
+  "metainfo" : {
+    "label" : "copilotTest",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "CfVr7rDDpVkfbq9NEoddU$$fvMpfYlV-8itbNACnlGar" : {
+      "id" : "CfVr7rDDpVkfbq9NEoddU$$fvMpfYlV-8itbNACnlGar",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "customer",
+        "x" : -800,
+        "y" : -440,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "customer",
+          "sourceType" : "Table",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9nx1hN-fe-ubjQGojTvrn$$5CE2jnRrORY49DfNRAxGj",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "3B9Z8zAp-v8LZDhSJ0Bl1$$X6y-XZrU9TgG752os2-xX",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "country",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

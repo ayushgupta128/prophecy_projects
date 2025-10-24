@@ -1,0 +1,156 @@
+{
+  "id" : "p3",
+  "metainfo" : {
+    "label" : "p3",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "table",
+          "kind" : {
+            "type" : "string",
+            "value" : "'students'"
+          }
+        } ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "26bUgaaGiOilK5pEfu_PY$$qE4XUIIIb5u1ssXGmMECF" : {
+      "id" : "26bUgaaGiOilK5pEfu_PY$$qE4XUIIIb5u1ssXGmMECF",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "student_records",
+        "x" : -120,
+        "y" : -400,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select * from students"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "hrKjD7rrNMbJKiFYZ_NjM$$mYC5MInaFIKBtE1jLnpR7",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "3KXniBbNuseVbNFsvnN2h$$z0c87gRG6V_8uF1GqRprg" : {
+      "id" : "3KXniBbNuseVbNFsvnN2h$$z0c87gRG6V_8uF1GqRprg",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "run_pipeline_p1",
+        "x" : -400,
+        "y" : 60,
+        "phase" : 0
+      },
+      "properties" : {
+        "maxTriggers" : 10000,
+        "triggerCondition" : "Always",
+        "enableMaxTriggers" : false,
+        "pipelineName" : "p1",
+        "parameters" : { }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "qf2qROzvCZCLUaf3z8rlp$$Zpm54g7fhFD1Y4mvrPUXW",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "XwcCz4CJkgjSRPWoTRhap$$yBB2wlAPRMTK04jBNFtxq",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "run_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "start_time",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "end_time",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "error",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "logs",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }
+            } ]
+          },
+          "slug" : "out0"
+        } ]
+      }
+    },
+    "_6P-BLNvUO3JE3_gmaTcX$$4GSHCSCQce3uod7nQdkJk" : {
+      "id" : "_6P-BLNvUO3JE3_gmaTcX$$4GSHCSCQce3uod7nQdkJk",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "dummytable_data",
+        "x" : -340,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "out",
+          "language" : "sql",
+          "content" : "select * from ayush_demos.demos.dummytable"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "4hBHXk5PYrcgUyrN0zFXu$$MDEl-a0BX8OakGZoqvWAK",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ ],
+  "component" : "Pipeline"
+}

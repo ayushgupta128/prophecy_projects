@@ -1,0 +1,111 @@
+{
+  "id" : "p1",
+  "metainfo" : {
+    "label" : "p1",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "sensorSchedule" : {
+      "enabled" : false,
+      "isDefaultView" : false,
+      "triggers" : { }
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "WST4lfCRgPb8cFpyqmfSH$$s4jZ1DoYVRI7qmtdoIqCF" : {
+      "id" : "WST4lfCRgPb8cFpyqmfSH$$s4jZ1DoYVRI7qmtdoIqCF",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "demographics_unknown_format",
+        "x" : -660,
+        "y" : -440,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "s1",
+          "sourceType" : "Seed"
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RMk9lxv7QTOZYIwcZBOvV$$0asY5s6qO1DyCMdZPOVub",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "ezBsCvq0vaHNiugcAoxS1$$_GYIfIY0CCbjG8pYe-zxC",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "age",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "bGQPslMxZxtYrjH0Trccg$$YRZLp5yUalmanmk5QBb9x" : {
+      "id" : "bGQPslMxZxtYrjH0Trccg$$YRZLp5yUalmanmk5QBb9x",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "p1__customer",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "p1__customer"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "WST4lfCRgPb8cFpyqmfSH$$s4jZ1DoYVRI7qmtdoIqCF", "bGQPslMxZxtYrjH0Trccg$$YRZLp5yUalmanmk5QBb9x" ],
+        "type" : "table",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "p1__customer_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "p1__customer_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "96Uh333cEnluDiaJdfJUk$$eREAU_BdwBpIkEgxQQF1Y",
+    "source" : "WST4lfCRgPb8cFpyqmfSH$$s4jZ1DoYVRI7qmtdoIqCF",
+    "sourcePort" : "ezBsCvq0vaHNiugcAoxS1$$_GYIfIY0CCbjG8pYe-zxC",
+    "target" : "bGQPslMxZxtYrjH0Trccg$$YRZLp5yUalmanmk5QBb9x",
+    "targetPort" : "p1__customer_in_0"
+  } ],
+  "component" : "Pipeline"
+}

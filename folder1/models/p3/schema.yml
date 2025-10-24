@@ -1,0 +1,9 @@
+---
+version: 2
+models:
+- name: "p3__dummytable_data"
+  tags:
+  - "prophecy_temp"
+- name: "p3__student_records"
+  tags:
+  - "prophecy_temp"
