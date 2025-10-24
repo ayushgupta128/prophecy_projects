@@ -167,7 +167,8 @@ sqlSources:
         - name: dbt_updated_at
           dataType:
             type: Timestamp
-      description: null
+      description: Customer information including status, effective dates, and addresses,
+        supporting customer relationship management.
       author: g.ayush@prophecy.io
       createdAt: '2025-10-21 07:16:10'
       tableType: table
@@ -278,8 +279,6 @@ sqlOrchestratorPipelines:
     description: null
     author: g.ayush@prophecy.io
     files:
-    - models/copilotTest/copilotTest__reformat_customer_city.sql
-    - models/copilotTest/schema.yml
     - .prophecy/ide/pipelines/copilotTest.json
     - pipelines/copilotTest.py
     createdAt: '2025-10-24 06:22:23'
@@ -289,9 +288,6 @@ sqlOrchestratorPipelines:
     description: null
     author: g.ayush@prophecy.io
     files:
-    - models/p3/p3__student_records.sql
-    - models/p3/schema.yml
-    - models/p3/p3__dummytable_data.sql
     - .prophecy/ide/pipelines/p3.json
     - pipelines/p3.py
     createdAt: '2025-10-22 15:48:44'

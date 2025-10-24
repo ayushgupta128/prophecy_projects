@@ -13,29 +13,243 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "reformat_custome##O8L5DiGa" : {
-      "id" : "reformat_custome##O8L5DiGa",
-      "component" : "Model",
+    "Aui7Mvy7rAEwJGzC4bMG8" : {
+      "id" : "Aui7Mvy7rAEwJGzC4bMG8",
+      "component" : "Dataset",
       "metadata" : {
-        "label" : "copilotTest__reformat_customer_city",
+        "label" : "new_table",
+        "x" : -800,
+        "y" : -40,
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "copilotTest__reformat_customer_city"
-      },
-      "visualMetaInfo" : {
-        "visualProcessIds" : [ "reformat_customer_city_aIE8y9gT", "reformat_custome##O8L5DiGa", "CfVr7rDDpVkfbq9NEoddU$$fvMpfYlV-8itbNACnlGar" ],
-        "type" : "ephemeral",
-        "isTemporaryTable" : true
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_table",
+          "sourceType" : "Table",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : ""
+        }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "copilotTest__reformat_customer_city_in_0",
-          "slug" : "in_0"
+          "id" : "4jEyWb8wXvgMRtrLfofmK",
+          "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "copilotTest__reformat_customer_city_out_0",
-          "slug" : "out_0"
+          "id" : "MzfkiYQ-6OmwpXr8cReWC",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "age",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "-aw8EcFeiZ66n4nt9MPx6" : {
+      "id" : "-aw8EcFeiZ66n4nt9MPx6",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "newtable",
+        "x" : -760,
+        "y" : 100,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "newtable",
+          "sourceType" : "Table",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ABxuSfO2JgpSj3upratlp",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "UmsH6vwIF5po3VOPXhrN2",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "age",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "CfVr7rDDpVkfbq9NEoddU$$fvMpfYlV-8itbNACnlGar" : {
+      "id" : "CfVr7rDDpVkfbq9NEoddU$$fvMpfYlV-8itbNACnlGar",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "customer",
+        "x" : -800,
+        "y" : -440,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "customer",
+          "sourceType" : "Table",
+          "sourceName" : "ayush_demos.demos"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Jd5lN6Wr",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "event_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "event_time",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "country",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "IRtLFqI4XyedD9bSf7mRi" : {
+      "id" : "IRtLFqI4XyedD9bSf7mRi",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "initial_table",
+        "x" : -820,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "initial_table",
+          "sourceType" : "Table",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "epQcVlhQtPz_IcMOb_vhc",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "QK3OeqdcudrWzJQ3vNXBe",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "Bigint"
+              }
+            }, {
+              "name" : "customer_name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "effective_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "end_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "extra_col",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dbt_scd_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dbt_valid_from",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dbt_valid_to",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dbt_updated_at",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            } ]
+          },
+          "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       }

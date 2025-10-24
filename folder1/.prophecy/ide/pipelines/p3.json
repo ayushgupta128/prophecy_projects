@@ -33,32 +33,6 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "26bUgaaGiOilK5pEfu_PY$$qE4XUIIIb5u1ssXGmMECF" : {
-      "id" : "26bUgaaGiOilK5pEfu_PY$$qE4XUIIIb5u1ssXGmMECF",
-      "component" : "SQLStatement",
-      "metadata" : {
-        "label" : "student_records",
-        "x" : -120,
-        "y" : -400,
-        "phase" : 0
-      },
-      "properties" : {
-        "fileTabs" : [ {
-          "path" : "out",
-          "id" : "out",
-          "language" : "sql",
-          "content" : "select * from students"
-        } ]
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "hrKjD7rrNMbJKiFYZ_NjM$$mYC5MInaFIKBtE1jLnpR7",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
     "3KXniBbNuseVbNFsvnN2h$$z0c87gRG6V_8uF1GqRprg" : {
       "id" : "3KXniBbNuseVbNFsvnN2h$$z0c87gRG6V_8uF1GqRprg",
       "component" : "Pipeline",
@@ -122,32 +96,6 @@
           },
           "slug" : "out0"
         } ]
-      }
-    },
-    "_6P-BLNvUO3JE3_gmaTcX$$4GSHCSCQce3uod7nQdkJk" : {
-      "id" : "_6P-BLNvUO3JE3_gmaTcX$$4GSHCSCQce3uod7nQdkJk",
-      "component" : "SQLStatement",
-      "metadata" : {
-        "label" : "dummytable_data",
-        "x" : -340,
-        "y" : -200,
-        "phase" : 0
-      },
-      "properties" : {
-        "fileTabs" : [ {
-          "path" : "out",
-          "id" : "out",
-          "language" : "sql",
-          "content" : "select * from ayush_demos.demos.dummytable"
-        } ]
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "4hBHXk5PYrcgUyrN0zFXu$$MDEl-a0BX8OakGZoqvWAK",
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
       }
     }
   },

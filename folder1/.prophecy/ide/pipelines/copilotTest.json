@@ -13,6 +13,100 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
+    "Aui7Mvy7rAEwJGzC4bMG8" : {
+      "id" : "Aui7Mvy7rAEwJGzC4bMG8",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_table",
+        "x" : -800,
+        "y" : -40,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_table",
+          "sourceType" : "Table",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4jEyWb8wXvgMRtrLfofmK",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "MzfkiYQ-6OmwpXr8cReWC",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "age",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "-aw8EcFeiZ66n4nt9MPx6" : {
+      "id" : "-aw8EcFeiZ66n4nt9MPx6",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "newtable",
+        "x" : -760,
+        "y" : 100,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "newtable",
+          "sourceType" : "Table",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ABxuSfO2JgpSj3upratlp",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "UmsH6vwIF5po3VOPXhrN2",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "age",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "CfVr7rDDpVkfbq9NEoddU$$fvMpfYlV-8itbNACnlGar" : {
       "id" : "CfVr7rDDpVkfbq9NEoddU$$fvMpfYlV-8itbNACnlGar",
       "component" : "Dataset",
@@ -68,80 +162,90 @@
         "isCustomOutputSchema" : false
       }
     },
-    "reformat_custome##O8L5DiGa" : {
-      "id" : "reformat_custome##O8L5DiGa",
-      "component" : "Reformat",
+    "IRtLFqI4XyedD9bSf7mRi" : {
+      "id" : "IRtLFqI4XyedD9bSf7mRi",
+      "component" : "Dataset",
       "metadata" : {
-        "label" : "reformat_customer_city",
-        "x" : -600,
-        "y" : -440,
+        "label" : "initial_table",
+        "x" : -820,
+        "y" : -260,
         "phase" : 0
       },
       "properties" : {
-        "columnsSelector" : [ ],
-        "expressions" : [ {
-          "expression" : {
-            "expression" : "customer_id"
-          },
-          "alias" : "CUSTOMER_ID",
-          "_row_id" : "418200141"
-        }, {
-          "expression" : {
-            "expression" : "city"
-          },
-          "alias" : "CITY",
-          "_row_id" : "298291603"
-        } ]
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "initial_table",
+          "sourceType" : "Table",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : ""
+        }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "U9Ghil1y",
+          "id" : "epQcVlhQtPz_IcMOb_vhc",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "QK3OeqdcudrWzJQ3vNXBe",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
             "fields" : [ {
               "name" : "customer_id",
               "dataType" : {
-                "type" : "String"
+                "type" : "Bigint"
               }
             }, {
-              "name" : "event_type",
+              "name" : "customer_name",
               "dataType" : {
                 "type" : "String"
               }
             }, {
-              "name" : "event_time",
+              "name" : "address",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "effective_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "end_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "extra_col",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dbt_scd_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dbt_valid_from",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dbt_valid_to",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "dbt_updated_at",
               "dataType" : {
                 "type" : "Timestamp"
-              }
-            }, {
-              "name" : "country",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "city",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "customer"
-        } ],
-        "outputs" : [ {
-          "id" : "aIE8y9gT",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "CUSTOMER_ID",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "CITY",
-              "dataType" : {
-                "type" : "String"
               }
             } ]
           },
@@ -151,12 +255,6 @@
       }
     }
   },
-  "connections" : [ {
-    "id" : "dv0DG1UE",
-    "source" : "CfVr7rDDpVkfbq9NEoddU$$fvMpfYlV-8itbNACnlGar",
-    "sourcePort" : "Jd5lN6Wr",
-    "target" : "reformat_custome##O8L5DiGa",
-    "targetPort" : "U9Ghil1y"
-  } ],
+  "connections" : [ ],
   "component" : "Pipeline"
 }

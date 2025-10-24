@@ -1,6 +1,0 @@
----
-version: 2
-models:
-- name: "copilotTest__reformat_customer_city"
-  tags:
-  - "prophecy_temp"
