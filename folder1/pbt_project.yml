@@ -278,6 +278,8 @@ sqlOrchestratorPipelines:
     description: null
     author: g.ayush@prophecy.io
     files:
+    - models/copilotTest/copilotTest__reformat_customer_city.sql
+    - models/copilotTest/schema.yml
     - .prophecy/ide/pipelines/copilotTest.json
     - pipelines/copilotTest.py
     createdAt: '2025-10-24 06:22:23'

@@ -10,20 +10,6 @@
         "fields" : [ ]
       }
     },
-    "schedule" : {
-      "cron" : "* 0 2 * * * *",
-      "timeZone" : "GMT",
-      "emailOnSuccess" : false,
-      "emailOnFailure" : false,
-      "emailOnStart" : false,
-      "emails" : [ "email@gmail.com" ],
-      "enabled" : false
-    },
-    "sensorSchedule" : {
-      "enabled" : false,
-      "isDefaultView" : false,
-      "triggers" : { }
-    },
     "isTranspiledPipeline" : false
   },
   "processes" : {
@@ -37,24 +23,16 @@
         "phase" : 0
       },
       "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
         "table" : {
           "name" : "customer",
           "sourceType" : "Table",
-          "sourceName" : "ayush_demos.demos",
-          "alias" : "",
-          "additionalProperties" : null
+          "sourceName" : "ayush_demos.demos"
         }
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "9nx1hN-fe-ubjQGojTvrn$$5CE2jnRrORY49DfNRAxGj",
-          "slug" : "in"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
-          "id" : "3B9Z8zAp-v8LZDhSJ0Bl1$$X6y-XZrU9TgG752os2-xX",
+          "id" : "Jd5lN6Wr",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -89,8 +67,96 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "reformat_custome##O8L5DiGa" : {
+      "id" : "reformat_custome##O8L5DiGa",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "reformat_customer_city",
+        "x" : -600,
+        "y" : -440,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "customer_id"
+          },
+          "alias" : "CUSTOMER_ID",
+          "_row_id" : "418200141"
+        }, {
+          "expression" : {
+            "expression" : "city"
+          },
+          "alias" : "CITY",
+          "_row_id" : "298291603"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "U9Ghil1y",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "event_type",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "event_time",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "country",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "city",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "customer"
+        } ],
+        "outputs" : [ {
+          "id" : "aIE8y9gT",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "CUSTOMER_ID",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CITY",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "dv0DG1UE",
+    "source" : "CfVr7rDDpVkfbq9NEoddU$$fvMpfYlV-8itbNACnlGar",
+    "sourcePort" : "Jd5lN6Wr",
+    "target" : "reformat_custome##O8L5DiGa",
+    "targetPort" : "U9Ghil1y"
+  } ],
   "component" : "Pipeline"
 }
