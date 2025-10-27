@@ -32,8 +32,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "demographics_unknown_format",
-        "x" : -660,
-        "y" : -440,
+        "x" : -420,
+        "y" : -600,
         "phase" : 0
       },
       "properties" : {

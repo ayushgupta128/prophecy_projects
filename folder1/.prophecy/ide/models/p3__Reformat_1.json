@@ -53,8 +53,8 @@
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_1",
-        "x" : -360,
-        "y" : -320,
+        "x" : -340,
+        "y" : -440,
         "phase" : 0
       },
       "properties" : {
@@ -79,8 +79,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "empty_output",
-        "x" : -560,
-        "y" : -300,
+        "x" : -540,
+        "y" : -420,
         "phase" : 0
       },
       "properties" : {

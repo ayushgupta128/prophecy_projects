@@ -38,8 +38,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "empty_output",
-        "x" : -560,
-        "y" : -300,
+        "x" : -540,
+        "y" : -420,
         "phase" : 0
       },
       "properties" : {
@@ -146,13 +146,92 @@
         "isCustomOutputSchema" : false
       }
     },
+    "0IlgMTnbNYU0zCTB1yGvD$$UOLWQz-bf5lIq4D02ahGI" : {
+      "id" : "0IlgMTnbNYU0zCTB1yGvD$$UOLWQz-bf5lIq4D02ahGI",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "empty_output_1",
+        "x" : -140,
+        "y" : -880,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "json_array_data",
+          "sourceType" : "Source",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "dSWyagT1U1yxiD1WjcJdb$$irELRZhiXEKnimopg3YvY",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "e7iDI7IkOOP7j7_CbMSi5$$b5Obg43GpC9P6BguLZ5g9",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "WpZF_Ii9bcTOvmMgLzBDA$$Fs4sR-7aecqIvhRA8jJSy" : {
+      "id" : "WpZF_Ii9bcTOvmMgLzBDA$$Fs4sR-7aecqIvhRA8jJSy",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "undefined_format_no_fields",
+        "x" : 80,
+        "y" : -880,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "complexdata",
+          "sourceType" : "Source",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "DM2jnzSTFU9rteiB7D0R1$$9tg0LfwkFoqrWLDlZA7DK",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ ]
+          },
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "DfCBwQyeK6dczcx7JbVvC$$OFxa3n7KqRAPw1ibdE5Ri",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "NyAiNM-fRwKuiFnPkggoq$$csOsKPS0wpOn5g8i40yEN" : {
       "id" : "NyAiNM-fRwKuiFnPkggoq$$csOsKPS0wpOn5g8i40yEN",
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_1",
-        "x" : -360,
-        "y" : -320,
+        "x" : -340,
+        "y" : -440,
         "phase" : 0
       },
       "properties" : {
@@ -251,13 +330,37 @@
         "isCustomOutputSchema" : false
       }
     },
+    "312aHTQ-VlBqTGK3KqANs$$Gx-mdDk1xV88yxPuRVK0l" : {
+      "id" : "312aHTQ-VlBqTGK3KqANs$$Gx-mdDk1xV88yxPuRVK0l",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "read_parquet_file",
+        "x" : -1140,
+        "y" : -940,
+        "phase" : 0
+      },
+      "properties" : {
+        "ports" : null,
+        "scriptMethodHeader" : "def Script(spark: SparkSession) -> DataFrame:",
+        "scriptMethodFooter" : "return out0",
+        "script" : "# out0 = spark.read.parquet('/Volumes/ayush_demos/demos/prophecy_orchestrator_volume/parts/part-00000-f11c21ce-30d0-4490-8074-b8f74bc4e1ee-c000.snappy.parquet')\n\n#out0 = spark.sql(\"select * from ayush_demos.demos.boletin_ssf_santander_situacion\")\nout0 = spark.sql(\"select * from ayush_demos.demos.debug_panic_table\")"
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "UJtaDAHRUIIlQyIz0dgXC$$Uv6COg3PNLUV-Wd55sGBG",
+          "slug" : "out0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "68GUL-1HrQZQbGIM_lJsx$$PzbuxHuwDQhzVtiHkFlbw" : {
       "id" : "68GUL-1HrQZQbGIM_lJsx$$PzbuxHuwDQhzVtiHkFlbw",
       "component" : "Directory",
       "metadata" : {
         "label" : "list_databricks_files",
-        "x" : -820,
-        "y" : -320,
+        "x" : -720,
+        "y" : -440,
         "phase" : 0
       },
       "properties" : {
@@ -317,6 +420,45 @@
             } ]
           },
           "slug" : "out0"
+        } ]
+      }
+    },
+    "4Bb4JlHQvqnLtLilgwXGV$$qV4bZYl1WKt79t_zVaF-j" : {
+      "id" : "4Bb4JlHQvqnLtLilgwXGV$$qV4bZYl1WKt79t_zVaF-j",
+      "component" : "OrchestrationSource",
+      "kind" : "DatabricksVolumeSource",
+      "metadata" : {
+        "label" : "OrchestrationSource_1",
+        "x" : -1080,
+        "y" : -600,
+        "phase" : 0
+      },
+      "properties" : {
+        "connector" : {
+          "kind" : "databricks",
+          "properties" : { },
+          "type" : "connector"
+        },
+        "properties" : { },
+        "format" : {
+          "properties" : {
+            "allowLazyQuotes" : false,
+            "allowEmptyColumnNames" : true,
+            "separator" : ",",
+            "nullValue" : "",
+            "encoding" : "UTF-8",
+            "header" : true
+          },
+          "kind" : "csv",
+          "category" : "file"
+        },
+        "isNew" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "FrwbMRRCoEaIPTdT2e1-T$$sjFiuSsThyBsxPJQKQc53",
+          "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       }
@@ -334,6 +476,12 @@
     "sourcePort" : "YW79gL1ymSRke66bIz9u2$$sfxDz_VdLpqla9KlU9wfD",
     "target" : "IxMkPvrS1DGcdojRFYqqe$$q2BsbuLNkwVCnpjMQU0Qc",
     "targetPort" : "aT3s9l8RVxzPfcyom85kC$$7OZHS2IPG7aamxFfXot8r"
+  }, {
+    "id" : "18p5oZrEe4Oh_sEnZvcNb$$cASpL7GqYbFS8DX8IqxsF",
+    "source" : "0IlgMTnbNYU0zCTB1yGvD$$UOLWQz-bf5lIq4D02ahGI",
+    "sourcePort" : "e7iDI7IkOOP7j7_CbMSi5$$b5Obg43GpC9P6BguLZ5g9",
+    "target" : "WpZF_Ii9bcTOvmMgLzBDA$$Fs4sR-7aecqIvhRA8jJSy",
+    "targetPort" : "DM2jnzSTFU9rteiB7D0R1$$9tg0LfwkFoqrWLDlZA7DK"
   } ],
   "component" : "Pipeline"
 }

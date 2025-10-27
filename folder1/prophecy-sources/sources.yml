@@ -130,6 +130,15 @@ sources:
   - name: "students"
     columns: []
     type: "table"
+  - name: "json_array_data"
+    identifier: "{{ var('table') }}"
+    columns: []
+    type: "table"
+  - name: "complexdata"
+    description: ""
+    identifier: "{{var('table1')}}"
+    columns: []
+    type: "table"
 - name: "ayush_demos.demos_demos"
   database: "ayush_demos"
   schema: "demos_demos"

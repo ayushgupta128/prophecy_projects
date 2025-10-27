@@ -4,3 +4,6 @@ models:
 - name: "p3__Reformat_1"
   tags:
   - "prophecy_temp"
+- name: "p3__undefined_format_no_fields"
+  tags:
+  - "prophecy_temp"

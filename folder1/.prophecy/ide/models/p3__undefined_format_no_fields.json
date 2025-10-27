@@ -1,7 +1,7 @@
 {
-  "id" : "p1__customer",
+  "id" : "p3__undefined_format_no_fields",
   "metainfo" : {
-    "label" : "p1__customer",
+    "label" : "p3__undefined_format_no_fields",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,29 +9,31 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"test\"",
+        "alias" : "\"complexdata\"",
         "materialized" : "table",
         "database" : "\"ayush_demos\"",
-        "schema" : "\"demos_demos\"",
+        "schema" : "\"demos\"",
         "type" : "ModelConfig"
       }
     },
     "version" : 3
   },
   "processes" : {
-    "WST4lfCRgPb8cFpyqmfSH$$s4jZ1DoYVRI7qmtdoIqCF" : {
-      "id" : "WST4lfCRgPb8cFpyqmfSH$$s4jZ1DoYVRI7qmtdoIqCF",
+    "0IlgMTnbNYU0zCTB1yGvD$$UOLWQz-bf5lIq4D02ahGI" : {
+      "id" : "0IlgMTnbNYU0zCTB1yGvD$$UOLWQz-bf5lIq4D02ahGI",
       "component" : "Source",
       "metadata" : {
-        "label" : "demographics_unknown_format",
-        "x" : -420,
-        "y" : -600,
+        "label" : "empty_output_1",
+        "x" : -140,
+        "y" : -880,
         "phase" : 0
       },
       "properties" : {
         "table" : {
-          "name" : "s1",
-          "sourceType" : "Seed"
+          "name" : "json_array_data",
+          "sourceType" : "Source",
+          "sourceName" : "ayush_demos.demos",
+          "alias" : ""
         },
         "writeOptions" : {
           "writeMode" : "overwrite"
@@ -40,25 +42,25 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "ezBsCvq0vaHNiugcAoxS1$$_GYIfIY0CCbjG8pYe-zxC",
+          "id" : "e7iDI7IkOOP7j7_CbMSi5$$b5Obg43GpC9P6BguLZ5g9",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "bGQPslMxZxtYrjH0Trccg$$YRZLp5yUalmanmk5QBb9x" : {
-      "id" : "bGQPslMxZxtYrjH0Trccg$$YRZLp5yUalmanmk5QBb9x",
+    "WpZF_Ii9bcTOvmMgLzBDA$$Fs4sR-7aecqIvhRA8jJSy" : {
+      "id" : "WpZF_Ii9bcTOvmMgLzBDA$$Fs4sR-7aecqIvhRA8jJSy",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "customer",
+        "label" : "undefined_format_no_fields",
         "phase" : 0
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM demographics_unknown_format\n\n",
+        "query" : "\nSELECT *\n\nFROM empty_output_1\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -67,11 +69,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "C-Qe6-H_1uGCkZJOX9nsf$$GRfOjsbrmfl7L303VT3je",
+          "id" : "DM2jnzSTFU9rteiB7D0R1$$9tg0LfwkFoqrWLDlZA7DK",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "-uPZzosvWdYtsG_ps23Yf$$Ls0eBIu-5KNL9OjFnYnFg",
+          "id" : "DfCBwQyeK6dczcx7JbVvC$$OFxa3n7KqRAPw1ibdE5Ri",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -80,11 +82,11 @@
     }
   },
   "connections" : [ {
-    "id" : "96Uh333cEnluDiaJdfJUk$$eREAU_BdwBpIkEgxQQF1Y",
-    "source" : "WST4lfCRgPb8cFpyqmfSH$$s4jZ1DoYVRI7qmtdoIqCF",
-    "sourcePort" : "ezBsCvq0vaHNiugcAoxS1$$_GYIfIY0CCbjG8pYe-zxC",
-    "target" : "bGQPslMxZxtYrjH0Trccg$$YRZLp5yUalmanmk5QBb9x",
-    "targetPort" : "C-Qe6-H_1uGCkZJOX9nsf$$GRfOjsbrmfl7L303VT3je"
+    "id" : "18p5oZrEe4Oh_sEnZvcNb$$cASpL7GqYbFS8DX8IqxsF",
+    "source" : "0IlgMTnbNYU0zCTB1yGvD$$UOLWQz-bf5lIq4D02ahGI",
+    "sourcePort" : "e7iDI7IkOOP7j7_CbMSi5$$b5Obg43GpC9P6BguLZ5g9",
+    "target" : "WpZF_Ii9bcTOvmMgLzBDA$$Fs4sR-7aecqIvhRA8jJSy",
+    "targetPort" : "DM2jnzSTFU9rteiB7D0R1$$9tg0LfwkFoqrWLDlZA7DK"
   } ],
   "component" : "Model"
 }

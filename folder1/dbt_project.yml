@@ -28,7 +28,9 @@ target-path: "target"
 # ==================
 # Variable Configs
 # ==================
-vars: {}
+vars:
+  table: "students"
+  table1: "students123"
 
 # ============
 # Misc
