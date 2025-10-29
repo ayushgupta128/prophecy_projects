@@ -1,0 +1,141 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "32012",
+    "jobId" : "jobs/databricks_job",
+    "name" : "databricks_job",
+    "schedule" : "0 0 0/1 * * ? *",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "prophecy_internal_jobs",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
+    }
+  },
+  "processes" : {
+    "3wy3pTjUPYuAd9mmQnERH$$RJZY0xYRM-_NF0jaWHnAG" : {
+      "id" : "3wy3pTjUPYuAd9mmQnERH$$RJZY0xYRM-_NF0jaWHnAG",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_0",
+        "slug" : "Script_0",
+        "x" : -760,
+        "y" : -400
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rI2yV85WTwG5FyarfI7KL$$iEJQVXyKgVZEFrLl6Egf9",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "PteocpQw0csBHKnpGWHRB$$5rGRJjp72_-hjashQCJrq",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
+        },
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "properties" : {
+        "code" : "print(\"abc\")"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
+    },
+    "QSRbjQxoJLawIja7WBvhI$$OJfsAPYBn4us7-N7i9J1r" : {
+      "id" : "QSRbjQxoJLawIja7WBvhI$$OJfsAPYBn4us7-N7i9J1r",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : -560,
+        "y" : -420
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "nub1BH1ENb08COXi_vNOW$$H9SYFOOewVXxYUkkcQ0uw",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "RXVG4QlgjrL5F8UHRRAp2$$MLiTcIIewqH7UYDkdrQev",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
+        },
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "properties" : {
+        "code" : "print(\"abc\")"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
+    }
+  },
+  "connections" : [ {
+    "id" : "SWbmeaYSe-2rj3RL8WELs$$OvkRG6zksQwR4gmD0VPQ4",
+    "source" : "3wy3pTjUPYuAd9mmQnERH$$RJZY0xYRM-_NF0jaWHnAG",
+    "target" : "QSRbjQxoJLawIja7WBvhI$$OJfsAPYBn4us7-N7i9J1r",
+    "sourcePort" : "PteocpQw0csBHKnpGWHRB$$5rGRJjp72_-hjashQCJrq",
+    "targetPort" : "nub1BH1ENb08COXi_vNOW$$H9SYFOOewVXxYUkkcQ0uw"
+  } ]
+}
