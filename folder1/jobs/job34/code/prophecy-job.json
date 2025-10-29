@@ -38,6 +38,69 @@
       "emr_serverless" : false
     }
   },
-  "processes" : { },
-  "connections" : [ ]
+  "processes" : {
+    "LcWNXyp57-D3ajOxwec2i$$p61l3a5oydrCJV5A-G1Ij" : {
+      "id" : "LcWNXyp57-D3ajOxwec2i$$p61l3a5oydrCJV5A-G1Ij",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_0",
+        "slug" : "Script_0",
+        "x" : -700,
+        "y" : -420
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vDJy4v1GPArZsdbcM-S1C$$TMyWPMaKYF7xjRWB6N-m3",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "sX240TEaxxGCpV1wQH2Ss$$A5Xggs6IuA6wXSO3XAFQZ",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "print(\"abc\")",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "y4VOtGW0Kg_YXz713H_Xl$$DAvlVXeRLRDG9RQ4YJhcR" : {
+      "id" : "y4VOtGW0Kg_YXz713H_Xl$$DAvlVXeRLRDG9RQ4YJhcR",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : -500,
+        "y" : -420
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ZZJ_a1yJJRKLg_LFdTkYc$$zwPcPqRnTR7QsiUNdggHy",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "2sVa4qHH3z5pF8sq-myUt$$XQiasDk7HZg1U8xhviSLQ",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "print(\"abc\")",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ {
+    "id" : "qug-Wpagew3Ibg0bKq-NU$$HYQpiK0YDHgbqrTcUBLQB",
+    "source" : "LcWNXyp57-D3ajOxwec2i$$p61l3a5oydrCJV5A-G1Ij",
+    "target" : "y4VOtGW0Kg_YXz713H_Xl$$DAvlVXeRLRDG9RQ4YJhcR",
+    "sourcePort" : "sX240TEaxxGCpV1wQH2Ss$$A5Xggs6IuA6wXSO3XAFQZ",
+    "targetPort" : "ZZJ_a1yJJRKLg_LFdTkYc$$zwPcPqRnTR7QsiUNdggHy"
+  } ]
 }
