@@ -1,6 +1,9 @@
 ---
 version: 2
 models:
+- name: "p3__Filter_1"
+  tags:
+  - "prophecy_temp"
 - name: "p3__Reformat_1"
   tags:
   - "prophecy_temp"

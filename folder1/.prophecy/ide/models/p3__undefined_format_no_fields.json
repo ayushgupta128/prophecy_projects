@@ -24,8 +24,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "empty_output_1",
-        "x" : -140,
-        "y" : -880,
+        "x" : -900,
+        "y" : -920,
         "phase" : 0
       },
       "properties" : {

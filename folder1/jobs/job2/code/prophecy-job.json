@@ -92,6 +92,63 @@
         "forEachIterationCount" : null
       },
       "parent" : null
+    },
+    "ZA7QPVNDTk6IVvRqN09dw$$tS9XTZR4LGEE5eHIOaMIL" : {
+      "id" : "ZA7QPVNDTk6IVvRqN09dw$$tS9XTZR4LGEE5eHIOaMIL",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "Model_1",
+        "slug" : "Model_1",
+        "x" : -1680,
+        "y" : -980
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zUtgcfW3_57BhJtD2oNGd$$ZaBsp4xAqvQTg_yS4fme9",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "U4xlSRnIQcspFFEcKJ1Dx$$j33g3-VtXxnxlkglRTUR2",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
+        },
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "properties" : {
+        "execSeed" : true,
+        "execRun" : false,
+        "gitEntity" : "branch",
+        "projectId" : "",
+        "runOnlyModel" : "false",
+        "loadingModels" : false,
+        "profile" : "run_profile",
+        "gitEntityValue" : "",
+        "execDeps" : false,
+        "execTest" : true,
+        "currentProjectModels" : [ ]
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
     }
   },
   "connections" : [ ]
