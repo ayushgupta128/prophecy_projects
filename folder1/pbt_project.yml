@@ -54,7 +54,7 @@ jobs:
       clusterMode:
         Multi: {}
       clusterId: null
-    enabled: true
+    enabled: false
     createdAt: '2025-10-29 08:33:56'
     author: g.ayush@prophecy.io
     models: []
@@ -81,6 +81,31 @@ jobs:
       clusterId: null
     enabled: true
     createdAt: '2025-10-29 08:47:43'
+    author: g.ayush@prophecy.io
+    models: []
+    sqlProjects: []
+  jobs/job33:
+    name: job33
+    description: ''
+    fabricUID: 35120
+    scheduler:
+      Composer: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: None
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Multi: {}
+      clusterId: null
+    enabled: false
+    createdAt: '2025-10-29 09:00:54'
     author: g.ayush@prophecy.io
     models: []
     sqlProjects: []
@@ -427,15 +452,6 @@ flags:
 pipelineConfigurations: {}
 projectConfigurations: {}
 sqlOrchestratorPipelines:
-  .prophecy/metadata/sqlorchestratorpipeline/copilotTest:
-    name: copilotTest
-    schema: null
-    description: null
-    author: g.ayush@prophecy.io
-    files:
-    - .prophecy/ide/pipelines/copilotTest.json
-    - pipelines/copilotTest.py
-    createdAt: '2025-10-24 06:22:23'
   .prophecy/metadata/sqlorchestratorpipeline/p3:
     name: p3
     schema: null
@@ -470,4 +486,13 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/p2.json
     - pipelines/p2.py
     createdAt: '2025-10-11 01:36:59'
+  .prophecy/metadata/sqlorchestratorpipeline/copilotTest:
+    name: copilotTest
+    schema: null
+    description: null
+    author: g.ayush@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/copilotTest.json
+    - pipelines/copilotTest.py
+    createdAt: '2025-10-24 06:22:23'
 sqlBusinessApps: {}
