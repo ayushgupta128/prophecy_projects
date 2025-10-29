@@ -77,9 +77,9 @@ jobs:
     pipelines: []
     jobClusterMode:
       clusterMode:
-        Single: {}
+        Multi: {}
       clusterId: null
-    enabled: null
+    enabled: true
     createdAt: '2025-10-29 08:47:43'
     author: g.ayush@prophecy.io
     models: []

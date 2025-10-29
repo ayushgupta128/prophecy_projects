@@ -7,7 +7,7 @@ from airflow import DAG
 from airflow.models.param import Param
 from airflow.decorators import task
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
-from g_ayush_test_sql_orch_job34.tasks import Script_0, Script_1
+from g_ayush_test_sql_orch_job34.tasks import Script_0, Script_1, Script_2
 PROPHECY_RELEASE_TAG = "__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__"
 
 with DAG(
@@ -20,4 +20,6 @@ with DAG(
 ) as dag:
     Script_0_op = Script_0()
     Script_1_op = Script_1()
+    Script_2_op = Script_2()
     Script_0_op >> Script_1_op
+    Script_1_op >> Script_2_op

@@ -6,7 +6,7 @@
     "name" : "job11",
     "dagName" : "g_ayush_test_sql_orch_job11",
     "schedule" : "0/2 * * * *",
-    "enabled" : false,
+    "enabled" : true,
     "alerting" : {
       "emails" : "",
       "onStart" : false,
@@ -94,6 +94,34 @@
       },
       "connections" : [ ],
       "processes" : { }
+    },
+    "qeokIEzHzQMrYryI3XdWt$$QuFKMvn98kCKR--SGu7r8" : {
+      "id" : "qeokIEzHzQMrYryI3XdWt$$QuFKMvn98kCKR--SGu7r8",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_2",
+        "slug" : "Script_2",
+        "x" : -440,
+        "y" : -440
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "vBYzzKwxvakZYv2U_2fxL$$7-FoVC_N1q_HDGqGVRe9E",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "_zI9br9-ZK6plRORgBZDo$$7zsqLy-YtAtUibFk5w7Wa",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "print(\"def\")",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
     }
   },
   "connections" : [ {
@@ -102,5 +130,11 @@
     "target" : "PxDVGsaVfCR6qlK_ukTHQ$$ALCMp7Z0wEqaWiwdWfJWR",
     "sourcePort" : "G5JIhkH59UtccOr-MBPTj$$vDHHbNlTlTuhr5s9SQLv3",
     "targetPort" : "O3AghrYMBCwikJvGSS6sn$$MBzKq7IkdaRVjAmOQllyR"
+  }, {
+    "id" : "pOJBuosRD-Fk-7FCHZqTa$$9XBWrLu1tfHcIKouteS4P",
+    "source" : "PxDVGsaVfCR6qlK_ukTHQ$$ALCMp7Z0wEqaWiwdWfJWR",
+    "target" : "qeokIEzHzQMrYryI3XdWt$$QuFKMvn98kCKR--SGu7r8",
+    "sourcePort" : "Gt7D8ua4g9iXMbeZf-ohA$$2ThnbwTS5EHKpd7FiHmac",
+    "targetPort" : "vBYzzKwxvakZYv2U_2fxL$$7-FoVC_N1q_HDGqGVRe9E"
   } ]
 }

@@ -94,6 +94,34 @@
       },
       "connections" : [ ],
       "processes" : { }
+    },
+    "WlQjXntcBKPEd-AFIxGQm$$EGE6Qz1pCNodw2Rd64bR4" : {
+      "id" : "WlQjXntcBKPEd-AFIxGQm$$EGE6Qz1pCNodw2Rd64bR4",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_2",
+        "slug" : "Script_2",
+        "x" : -340,
+        "y" : -480
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "arMznfUOPqYpit9q_KRWY$$LQ4sguf15YQ01GsPJnEY-",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "hz7vNx5pF-V7E0VJzo4m4$$tjYxPm_4MP7j2jM4d_KzI",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "print(\"xyz\")",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
     }
   },
   "connections" : [ {
@@ -102,5 +130,11 @@
     "target" : "y4VOtGW0Kg_YXz713H_Xl$$DAvlVXeRLRDG9RQ4YJhcR",
     "sourcePort" : "sX240TEaxxGCpV1wQH2Ss$$A5Xggs6IuA6wXSO3XAFQZ",
     "targetPort" : "ZZJ_a1yJJRKLg_LFdTkYc$$zwPcPqRnTR7QsiUNdggHy"
+  }, {
+    "id" : "SzJkNyUYYj5JVZtfrACEU$$0hKJUIWvd4t3OXBMUVhBs",
+    "source" : "y4VOtGW0Kg_YXz713H_Xl$$DAvlVXeRLRDG9RQ4YJhcR",
+    "target" : "WlQjXntcBKPEd-AFIxGQm$$EGE6Qz1pCNodw2Rd64bR4",
+    "sourcePort" : "2sVa4qHH3z5pF8sq-myUt$$XQiasDk7HZg1U8xhviSLQ",
+    "targetPort" : "arMznfUOPqYpit9q_KRWY$$LQ4sguf15YQ01GsPJnEY-"
   } ]
 }
