@@ -477,6 +477,25 @@ flags:
 pipelineConfigurations: {}
 projectConfigurations: {}
 sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/new_pipeline:
+    name: new_pipeline
+    schema: null
+    description: null
+    author: g.ayush@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/new_pipeline.json
+    - pipelines/new_pipeline.py
+    createdAt: '2025-10-29 09:33:12'
+  .prophecy/metadata/sqlorchestratorpipeline/p2:
+    name: p2
+    schema: null
+    description: null
+    author: g.ayush@prophecy.io
+    files:
+    - models/p2/schema.yml
+    - .prophecy/ide/pipelines/p2.json
+    - pipelines/p2.py
+    createdAt: '2025-10-11 01:36:59'
   .prophecy/metadata/sqlorchestratorpipeline/p1:
     name: p1
     schema: null
@@ -510,14 +529,4 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/p3.json
     - pipelines/p3.py
     createdAt: '2025-10-22 15:48:44'
-  .prophecy/metadata/sqlorchestratorpipeline/p2:
-    name: p2
-    schema: null
-    description: null
-    author: g.ayush@prophecy.io
-    files:
-    - models/p2/schema.yml
-    - .prophecy/ide/pipelines/p2.json
-    - pipelines/p2.py
-    createdAt: '2025-10-11 01:36:59'
 sqlBusinessApps: {}
