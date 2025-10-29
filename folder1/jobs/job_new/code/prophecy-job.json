@@ -7,9 +7,9 @@
     "schedule" : "None",
     "scheduleTimeZone" : "UTC",
     "jobClusterMode" : {
-      "clusterMode" : "Single"
+      "clusterMode" : "Multi"
     },
-    "enabled" : false,
+    "enabled" : true,
     "defaultClusterSize" : "prophecy_internal_jobs",
     "alerting" : {
       "emails" : "",
