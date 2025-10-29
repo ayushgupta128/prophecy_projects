@@ -402,6 +402,27 @@ flags:
 pipelineConfigurations: {}
 projectConfigurations: {}
 sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/p1:
+    name: p1
+    schema: null
+    description: null
+    author: g.ayush@prophecy.io
+    files:
+    - models/p1/schema.yml
+    - models/p1/p1__customer.sql
+    - .prophecy/ide/pipelines/p1.json
+    - pipelines/p1.py
+    createdAt: '2025-10-22 16:06:22'
+  .prophecy/metadata/sqlorchestratorpipeline/p2:
+    name: p2
+    schema: null
+    description: null
+    author: g.ayush@prophecy.io
+    files:
+    - models/p2/schema.yml
+    - .prophecy/ide/pipelines/p2.json
+    - pipelines/p2.py
+    createdAt: '2025-10-11 01:36:59'
   .prophecy/metadata/sqlorchestratorpipeline/p3:
     name: p3
     schema: null
@@ -415,27 +436,6 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/p3.json
     - pipelines/p3.py
     createdAt: '2025-10-22 15:48:44'
-  .prophecy/metadata/sqlorchestratorpipeline/p2:
-    name: p2
-    schema: null
-    description: null
-    author: g.ayush@prophecy.io
-    files:
-    - models/p2/schema.yml
-    - .prophecy/ide/pipelines/p2.json
-    - pipelines/p2.py
-    createdAt: '2025-10-11 01:36:59'
-  .prophecy/metadata/sqlorchestratorpipeline/p1:
-    name: p1
-    schema: null
-    description: null
-    author: g.ayush@prophecy.io
-    files:
-    - models/p1/schema.yml
-    - models/p1/p1__customer.sql
-    - .prophecy/ide/pipelines/p1.json
-    - pipelines/p1.py
-    createdAt: '2025-10-22 16:06:22'
   .prophecy/metadata/sqlorchestratorpipeline/copilotTest:
     name: copilotTest
     schema: null
