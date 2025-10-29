@@ -8,7 +8,32 @@ buildSystemDetails: null
 pipelines: {}
 datasets: {}
 templates: {}
-jobs: {}
+jobs:
+  jobs/job_new:
+    name: job_new
+    description: ''
+    fabricUID: 34475
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: None
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2025-10-29 08:29:04'
+    author: g.ayush@prophecy.io
+    models: []
+    sqlProjects: []
 gemContainer:
   languageVersion: ''
   gemLibsVersion: ''
@@ -365,6 +390,16 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/p3.json
     - pipelines/p3.py
     createdAt: '2025-10-22 15:48:44'
+  .prophecy/metadata/sqlorchestratorpipeline/p2:
+    name: p2
+    schema: null
+    description: null
+    author: g.ayush@prophecy.io
+    files:
+    - models/p2/schema.yml
+    - .prophecy/ide/pipelines/p2.json
+    - pipelines/p2.py
+    createdAt: '2025-10-11 01:36:59'
   .prophecy/metadata/sqlorchestratorpipeline/p1:
     name: p1
     schema: null
@@ -385,14 +420,4 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/copilotTest.json
     - pipelines/copilotTest.py
     createdAt: '2025-10-24 06:22:23'
-  .prophecy/metadata/sqlorchestratorpipeline/p2:
-    name: p2
-    schema: null
-    description: null
-    author: g.ayush@prophecy.io
-    files:
-    - models/p2/schema.yml
-    - .prophecy/ide/pipelines/p2.json
-    - pipelines/p2.py
-    createdAt: '2025-10-11 01:36:59'
 sqlBusinessApps: {}
