@@ -1,0 +1,106 @@
+{
+  "metainfo" : {
+    "type" : "Composer",
+    "fabricId" : "35120",
+    "jobId" : "jobs/job11",
+    "name" : "job11",
+    "dagName" : "g_ayush_test_sql_orch_job11",
+    "schedule" : "0/2 * * * *",
+    "enabled" : false,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "ignore_first_depends_on_past" : true,
+      "do_xcom_push" : true
+    },
+    "maxActiveRuns" : 1,
+    "catchup" : false,
+    "scheduleTimeZone" : "UTC",
+    "dagParams" : {
+      "instances" : {
+        "default" : { }
+      },
+      "params" : { },
+      "selected" : "default"
+    },
+    "airflowFunctions" : [ ],
+    "dynamicPipelineStatus" : {
+      "databricks" : false,
+      "dataproc" : false,
+      "emr" : false,
+      "onprem" : false,
+      "emr_serverless" : false
+    }
+  },
+  "processes" : {
+    "EnleyK7X8trRfvkZ4-ACt$$n96REFELC1JR2pPYUYV3V" : {
+      "id" : "EnleyK7X8trRfvkZ4-ACt$$n96REFELC1JR2pPYUYV3V",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_0",
+        "slug" : "Script_0",
+        "x" : -700,
+        "y" : -420
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "99x8HRR57uJwhoa_CIFf1$$awXIIXb6TukzCBnMzI4FO",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "G5JIhkH59UtccOr-MBPTj$$vDHHbNlTlTuhr5s9SQLv3",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "print(\"abc\")",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    },
+    "PxDVGsaVfCR6qlK_ukTHQ$$ALCMp7Z0wEqaWiwdWfJWR" : {
+      "id" : "PxDVGsaVfCR6qlK_ukTHQ$$ALCMp7Z0wEqaWiwdWfJWR",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : -580,
+        "y" : -420
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "O3AghrYMBCwikJvGSS6sn$$MBzKq7IkdaRVjAmOQllyR",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "Gt7D8ua4g9iXMbeZf-ohA$$2ThnbwTS5EHKpd7FiHmac",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "print(\"abc\")",
+        "language" : "bash",
+        "taskId" : null
+      },
+      "connections" : [ ],
+      "processes" : { }
+    }
+  },
+  "connections" : [ {
+    "id" : "5lsUv0TeOQDJ3Y8V5-zpu$$1ChB-0U0FgTrK89bU0MqU",
+    "source" : "EnleyK7X8trRfvkZ4-ACt$$n96REFELC1JR2pPYUYV3V",
+    "target" : "PxDVGsaVfCR6qlK_ukTHQ$$ALCMp7Z0wEqaWiwdWfJWR",
+    "sourcePort" : "G5JIhkH59UtccOr-MBPTj$$vDHHbNlTlTuhr5s9SQLv3",
+    "targetPort" : "O3AghrYMBCwikJvGSS6sn$$MBzKq7IkdaRVjAmOQllyR"
+  } ]
+}
